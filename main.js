@@ -15,10 +15,10 @@ async function fetchCategory(category, limit = null) {
   return limit ? data.products.slice(0, limit) : data.products;
 }
 
-function renderCards(el, list) {
+function renderCards(el, list, categoryName) {  // ✅ categoryName qo‘shildi
   el.innerHTML = "";
   list.forEach((item, index) => {
-    el.innerHTML += createCard(item, index);
+    el.innerHTML += createCard(item, index, categoryName);  // categoryName uzatiladi
   });
 
   initHearts(el); 
@@ -36,11 +36,11 @@ function renderBanner(el, img) {
   `;
 }
 
-function createCard(item, index) {
+function createCard(item, index, categoryName) { // ✅ categoryName qo‘shildi
   return `
   <div class="max-w-[20%] p-2 bg-white rounded-xl shadow-md flex flex-col gap-3 relative transition-transform duration-300 ease-out hover:scale-[1.05]">
     <!-- HEART BTN -->
-    <button class="heart-btn absolute top-3 right-3 w-[32px] h-[32px] rounded-full flex items-center justify-center shadow transition-transform duration-300 hover:scale-[1.05]" data-index="${index}">
+    <button class="heart-btn absolute top-3 right-3 w-[32px] h-[32px] rounded-full flex items-center justify-center shadow transition-transform duration-300 hover:scale-[1.05]" data-index="${categoryName}-${index}">
       <svg class="heart-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </svg>
@@ -63,7 +63,6 @@ function createCard(item, index) {
     <!-- TUGMALAR -->
     <div class="flex items-center gap-3 mt-2">
       <button class="border border-black rounded-md p-2 bg-white text-black hover:bg-black hover:text-white hover:border-white transition duration-300 active:scale-95">
-        <!-- Icon SVG -->
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
           <circle cx="10.07" cy="20.59" r="1.91" />
           <circle cx="18.66" cy="20.59" r="1.91" />
@@ -99,34 +98,34 @@ function initHearts(container = document) {
 
 async function initPage() {
   const phones = await fetchCategory("smartphones", 10);
-  renderCards(phonesEl, phones);
+  renderCards(phonesEl, phones, "smartphones"); // ✅ categoryName qo‘shildi
 
   renderBanner(reklama1, "https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-16/DvAmWwCXU8V2EDK0d3bFFo7YbIpfPT8euXbpAkSWU6PxaThfpP4GeGHfrLJN.jpg");
 
   const laptops = await fetchCategory("laptops");
-  renderCards(laptopsEl, laptops);
+  renderCards(laptopsEl, laptops, "laptops"); // ✅
 
   renderBanner(reklama2, "https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-30/jRvSQq2QhdUCU8XjqZeMuymAFBTeCrWq5xqCqtZLCAYDA1yd4WHW5XPfFcAH.jpg");
 
   const groceries = await fetchCategory("groceries", 2);
-  renderCards(groceriesEl, groceries);
+  renderCards(groceriesEl, groceries, "groceries"); // ✅
 
   renderBanner(reklama3, "https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-16/lxBGken4j14iTEsqGjvmwobnIQDy1JMz1RQK5H3yqsGkBFpatl5J5QgPdarc.jpg");
 
   const beautyProducts = await fetchCategory("groceries", 10);
-  renderCards(beautyEl, beautyProducts);
+  renderCards(beautyEl, beautyProducts, "beauty"); // ✅
 
   renderBanner(reklama4, "https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-16/rNO2PjAlBe014UcE8TjOCPnvglnKhXZLeu4pC1hpl8qNTAO5xVNaaCm9Qq4n.jpg");
 
   const furnitureProducts = await fetchCategory("groceries", 7);
-  renderCards(furnitureEl, furnitureProducts);
+  renderCards(furnitureEl, furnitureProducts, "furniture"); // ✅
 }
 
 const style = document.createElement('style');
 style.innerHTML = `
 .heart-btn.active .heart-icon path {
-  fill: red;
-  stroke: red;
+  fill: red !important;
+  stroke: red !important;
 }
 `;
 document.head.appendChild(style);
