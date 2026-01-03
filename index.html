@@ -23,48 +23,95 @@
     <div id="beauty" class="flex flex-wrap gap-4"></div>
     <div id="reklama4"></div>
     <div id="furniture" class="flex flex-wrap gap-4"></div>
-     <div class="flex py-8 justify-between">
+    <div class="flex py-8 justify-between">
+      <img class="w-[60%] rounded-md"
+        src="https://olcha.uz/image/original/homePage/cdn_1/2024-06-21/yotr1FzMpoaa6nQ4DPpcXboD8v063uViSWkEgVw5Hmvgd2tFfAhGOHGwlvSj.jpg"
+        alt="">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl p-4 shadow-sm">
+          <img
+            src="https://olcha.uz/image/220x220/products/fJUCbjhIo15C5srsC1cWoTcWqPcpSCjtHodfP6MSA7NT8DDE24EsJZRo6Naf.jpg"
+            class="w-full h-36 object-contain mb-3" />
+          <h3 class="text-sm font-medium">Ноутбук MSI Raider GE77HX</h3>
+          <p class="font-bold mt-2">67 080 874 сум</p>
+          <span class="inline-block mt-2 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full">
+            7 856 000 сум x 12 мес
+          </span>
+        </div>
 
-    <img class="w-[60%] rounded-md" src="https://olcha.uz/image/original/homePage/cdn_1/2024-06-21/yotr1FzMpoaa6nQ4DPpcXboD8v063uViSWkEgVw5Hmvgd2tFfAhGOHGwlvSj.jpg" alt="">
+        <div class="bg-white rounded-xl p-4 shadow-sm">
+          <img
+            src="https://olcha.uz/image/220x220/products/cdn_1/supplier/stores/1/2024-06-07/tqGChmLwX0hSVWVgVE9w74jCJgOuFRwgDQ0FXQLMA1mWoJhRi1zG9iOlaKtG.JPG"
+            class="w-full h-36 object-contain mb-3" />
+          <h3 class="text-sm font-medium">Sony WH-CH720N</h3>
+          <p class="font-bold mt-2">1 477 043 сум</p>
+          <span class="inline-block mt-2 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full">
+            174 000 сум x 12 мес
+          </span>
+        </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-      <div class="bg-white rounded-xl p-4 shadow-sm">
-        <img src="https://olcha.uz/image/220x220/products/fJUCbjhIo15C5srsC1cWoTcWqPcpSCjtHodfP6MSA7NT8DDE24EsJZRo6Naf.jpg" class="w-full h-36 object-contain mb-3"/>
-        <h3 class="text-sm font-medium">Ноутбук MSI Raider GE77HX</h3>
-        <p class="font-bold mt-2">67 080 874 сум</p>
-        <span class="inline-block mt-2 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full">
-          7 856 000 сум x 12 мес
-        </span>
+        <div class="bg-white rounded-xl p-4 shadow-sm sm:col-span-2 w-[50%]">
+          <img
+            src="https://olcha.uz/image/220x220/products/VyPgqUqD96sheF0OHYCf3rk14n9rMUyBrMaG9zFreCRAepW4k78ktVxIbd8f.jpg"
+            class="w-full h-36 object-contain mb-3" />
+          <h3 class="text-sm font-medium">Samsung Galaxy Buds 2</h3>
+          <p class="font-bold mt-2">1 500 000 сум</p>
+          <span class="inline-block mt-2 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full">
+            176 000 сум x 12 мес
+          </span>
+        </div>
       </div>
-
-      <div class="bg-white rounded-xl p-4 shadow-sm">
-        <img src="https://olcha.uz/image/220x220/products/cdn_1/supplier/stores/1/2024-06-07/tqGChmLwX0hSVWVgVE9w74jCJgOuFRwgDQ0FXQLMA1mWoJhRi1zG9iOlaKtG.JPG" class="w-full h-36 object-contain mb-3"/>
-        <h3 class="text-sm font-medium">Sony WH-CH720N</h3>
-        <p class="font-bold mt-2">1 477 043 сум</p>
-        <span class="inline-block mt-2 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full">
-          174 000 сум x 12 мес
-        </span>
-      </div>
-
-      <div class="bg-white rounded-xl p-4 shadow-sm sm:col-span-2 w-[50%]">
-        <img src="https://olcha.uz/image/220x220/products/VyPgqUqD96sheF0OHYCf3rk14n9rMUyBrMaG9zFreCRAepW4k78ktVxIbd8f.jpg" class="w-full h-36 object-contain mb-3"/>
-        <h3 class="text-sm font-medium">Samsung Galaxy Buds 2</h3>
-        <p class="font-bold mt-2">1 500 000 сум</p>
-        <span class="inline-block mt-2 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full">
-          176 000 сум x 12 мес
-        </span>
-      </div>
-
     </div>
-  </div>
-  <style>
-.heart-btn.active .heart-icon path {
-    fill: red !important;
-    stroke: red !important;
-}
+    <style>
+      .heart-btn.active .heart-icon path {
+        fill: red !important;
+        stroke: red !important;
+      }
+      
+    </style>
+    <div id="productModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+      <div class="bg-white rounded-xl w-[900px] max-w-[95%] p-6 relative">
+        <button id="closeModal" class="absolute top-4 right-4 text-2xl">&times;</button>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gray-100 rounded-xl p-4 flex items-center justify-center">
+            <img id="modalImg" src="" class="max-h-[350px] object-contain">
+          </div>
+          <div class="flex flex-col gap-4">
+            <h2 id="modalTitle" class="text-2xl font-bold"></h2>
+            <p id="modalPrice" class="text-2xl font-bold"></p>
+            <div>
+              <p class="font-medium mb-2">Xotira:</p>
+              <div class="flex gap-2">
+                <button class="border px-4 py-2 rounded">8/128 GB</button>
+                <button class="border px-4 py-2 rounded">6/128 GB</button>
+                <button class="border px-4 py-2 rounded">8/256 GB</button>
+              </div>
+            </div>
+            <button id="addToCartBtn"
+              class="bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">
+              Korzinkaga qo‘shish
+            </button>
 
-</style>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SUCCESS MODAL -->
+    <div id="successModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[60]">
+      <div class="bg-white rounded-2xl p-8 text-center w-[360px] relative">
+
+        <!-- Emoji / Rasm -->
+        <img src="https://cdn-icons-png.flaticon.com/512/742/742751.png" class="w-24 mx-auto mb-4" alt="success">
+
+        <h2 class="text-xl font-bold mb-2">✅ Muvaffaqiyatli!</h2>
+        <p class="text-gray-600 mb-6">Tovar korzinkaga qo‘shildi</p>
+
+        <button id="closeSuccessModal" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition">
+          OK
+        </button>
+      </div>
+    </div>
+
   </section>
   <!-- abdulloh abu70ni tugashi -->
   <script src="./main.js"></script>

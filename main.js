@@ -71,9 +71,13 @@ function createCard(item, index, categoryName) { // ✅ categoryName qo‘shildi
         </svg>
       </button>
 
-      <button class="flex-1 border border-red-600 text-red-600 font-medium py-2 rounded-md hover:bg-red-600 hover:text-white transition">
-        Korzinkaga
-      </button>
+      <button 
+  onclick='openModal(${JSON.stringify(item)})'
+  class="flex-1 border border-red-600 text-red-600 font-medium py-2 rounded-md hover:bg-red-600 hover:text-white transition"
+>
+  Korzinkaga
+</button>
+
     </div>
   </div>
   `;
@@ -131,3 +135,52 @@ style.innerHTML = `
 document.head.appendChild(style);
 
 initPage();
+const modal = document.getElementById("productModal");
+const modalImg = document.getElementById("modalImg");
+const modalTitle = document.getElementById("modalTitle");
+const modalPrice = document.getElementById("modalPrice");
+const closeModal = document.getElementById("closeModal");
+
+function openModal(item) {
+  modalImg.src = item.thumbnail;
+  modalTitle.textContent = item.title;
+  modalPrice.textContent = item.price.toLocaleString() + " so'm";
+
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+}
+
+closeModal.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+});
+const successModal = document.getElementById("successModal");
+const closeSuccessModal = document.getElementById("closeSuccessModal");
+
+function openSuccessModal() {
+  successModal.classList.remove("hidden");
+  successModal.classList.add("flex");
+}
+function closeSuccess() {
+  successModal.classList.add("hidden");
+  successModal.classList.remove("flex");
+}
+closeSuccessModal.addEventListener("click", closeSuccess);
+successModal.addEventListener("click", (e) => {
+  if (e.target === successModal) {
+    closeSuccess();
+  }
+});
+const addToCartBtn = document.getElementById("addToCartBtn");
+addToCartBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+  openSuccessModal();
+});
