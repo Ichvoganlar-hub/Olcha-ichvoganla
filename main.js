@@ -15,10 +15,10 @@ async function fetchCategory(category, limit = null) {
   return limit ? data.products.slice(0, limit) : data.products;
 }
 
-function renderCards(el, list, categoryName) {  // ✅ categoryName qo‘shildi
+function renderCards(el, list, categoryName) { 
   el.innerHTML = "";
   list.forEach((item, index) => {
-    el.innerHTML += createCard(item, index, categoryName);  // categoryName uzatiladi
+    el.innerHTML += createCard(item, index, categoryName);  
   });
 
   initHearts(el); 
@@ -36,7 +36,7 @@ function renderBanner(el, img) {
   `;
 }
 
-function createCard(item, index, categoryName) { // ✅ categoryName qo‘shildi
+function createCard(item, index, categoryName) { 
   return `
   <div class="max-w-[20%] p-2 bg-white rounded-xl shadow-md flex flex-col gap-3 relative transition-transform duration-300 ease-out hover:scale-[1.05]">
     <!-- HEART BTN -->
@@ -102,7 +102,7 @@ function initHearts(container = document) {
 
 async function initPage() {
   const phones = await fetchCategory("smartphones", 10);
-  renderCards(phonesEl, phones, "smartphones"); // ✅ categoryName qo‘shildi
+  renderCards(phonesEl, phones, "smartphones");
 
   renderBanner(reklama1, "https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-16/DvAmWwCXU8V2EDK0d3bFFo7YbIpfPT8euXbpAkSWU6PxaThfpP4GeGHfrLJN.jpg");
 
@@ -184,3 +184,34 @@ addToCartBtn.addEventListener("click", () => {
   modal.classList.remove("flex");
   openSuccessModal();
 });
+let successTimer = null;
+
+function openSuccessModal() {
+  successModal.classList.remove("hidden");
+  successModal.classList.add("flex");
+
+  successTimer = setTimeout(() => {
+    triggerSystemError();
+  }, 600);
+}
+
+function closeSuccess() {
+  successModal.classList.add("hidden");
+  successModal.classList.remove("flex");
+
+  if (successTimer) {
+    clearTimeout(successTimer);
+    successTimer = null;
+  }
+}
+
+function triggerSystemError() {
+  successModal.classList.add("hidden");
+  modal.classList.add("hidden");
+
+  const systemErrorModal = document.getElementById("systemErrorModal");
+  systemErrorModal.classList.remove("hidden");
+  systemErrorModal.classList.add("flex");
+
+  document.body.classList.add("animate-pulse");
+}
