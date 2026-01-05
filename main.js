@@ -73,6 +73,7 @@ function renderBanner(el,img){
   </div>`;
 }
 
+
 function initHearts(container=document){
   const heartBtns = container.querySelectorAll(".heart-btn");
   heartBtns.forEach(btn=>{
