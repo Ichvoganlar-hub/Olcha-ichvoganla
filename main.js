@@ -33,7 +33,7 @@ function createCard(item, index, categoryName) {
   return `
   <div class="max-w-[20%] p-2 bg-white rounded-xl shadow-md flex flex-col gap-3 relative transition-transform duration-300 ease-out hover:scale-[1.05]">
     <button class="heart-btn absolute top-3 right-3 w-[32px] h-[32px] rounded-full flex items-center justify-center shadow transition-transform duration-300 hover:scale-[1.05]" data-index="${categoryName}-${index}">
-      <svg class="heart-icon" viewBox="0 0 24 24">
+      <svg class="heart-iconпше " viewBox="0 0 24 24">
         <path d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
       </svg>
     </button>
@@ -61,87 +61,87 @@ function createCard(item, index, categoryName) {
 
 function renderCards(el, list, categoryName) {
   el.innerHTML = "";
-  list.forEach((item,index)=>{
-    el.innerHTML += createCard(item,index,categoryName);
+  list.forEach((item, index) => {
+    el.innerHTML += createCard(item, index, categoryName);
   });
   initHearts(el);
 }
 
-function renderBanner(el,img){
+function renderBanner(el, img) {
   el.innerHTML = `<div class="flex justify-center items-center py-[80px]">
     <img src="${img}" class="rounded-[30px] w-full transition-transform duration-500 ease-out hover:scale-[1.05]" alt="">
   </div>`;
 }
 
 
-function initHearts(container=document){
+function initHearts(container = document) {
   const heartBtns = container.querySelectorAll(".heart-btn");
-  heartBtns.forEach(btn=>{
+  heartBtns.forEach(btn => {
     const index = btn.dataset.index;
-    if(localStorage.getItem(`heartActive-${index}`)==='true') btn.classList.add('active');
-    btn.addEventListener("click",()=>{
+    if (localStorage.getItem(`heartActive-${index}`) === 'true') btn.classList.add('active');
+    btn.addEventListener("click", () => {
       btn.classList.toggle('active');
-      localStorage.setItem(`heartActive-${index}`,btn.classList.contains('active'));
+      localStorage.setItem(`heartActive-${index}`, btn.classList.contains('active'));
       console.log(` yurak ${index} ${btn.classList.contains('active') ? "like bosildi" : "bosilgan lik ochirildi"}`);
     });
   });
 }
 
-function getCart(){return JSON.parse(localStorage.getItem("cart"))||[];}
-function saveCart(cart){localStorage.setItem("cart",JSON.stringify(cart));}
+function getCart() { return JSON.parse(localStorage.getItem("cart")) || []; }
+function saveCart(cart) { localStorage.setItem("cart", JSON.stringify(cart)); }
 
-document.addEventListener("click",(e)=>{
+document.addEventListener("click", (e) => {
   const btn = e.target.closest(".add-to-cart-btn");
-  if(!btn) return;
+  if (!btn) return;
 
   let item;
   try {
-    item = JSON.parse(decodeURIComponent(btn.dataset.item)); 
-  } catch(err){
+    item = JSON.parse(decodeURIComponent(btn.dataset.item));
+  } catch (err) {
     console.error(" JSON parse error:", err);
     return;
   }
 
   let cart = getCart();
-  const exists = cart.find(p=>p.id===item.id);
-  if(!exists) cart.push({...item,qty:1});
-  else exists.qty +=1;
+  const exists = cart.find(p => p.id === item.id);
+  if (!exists) cart.push({ ...item, qty: 1 });
+  else exists.qty += 1;
   saveCart(cart);
-  console.log("korzika tugmasi bosildi:",cart);
+  console.log("korzika tugmasi bosildi:", cart);
 
-  openModal(item); 
+  openModal(item);
 });
 
-function openModal(item){
+function openModal(item) {
   modalImg.src = item.thumbnail;
   modalTitle.textContent = item.title;
-  modalPrice.textContent = item.price.toLocaleString()+" so'm";
+  modalPrice.textContent = item.price.toLocaleString() + " so'm";
   modal.classList.remove("hidden");
   modal.classList.add("flex");
 }
-closeModal.addEventListener("click",()=>{
+closeModal.addEventListener("click", () => {
   modal.classList.add("hidden"); modal.classList.remove("flex");
 });
-modal.addEventListener("click",(e)=>{
-  if(e.target===modal){modal.classList.add("hidden"); modal.classList.remove("flex");}
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) { modal.classList.add("hidden"); modal.classList.remove("flex"); }
 });
 
-function openSuccessModal(){
+function openSuccessModal() {
   successModal.classList.remove("hidden");
   successModal.classList.add("flex");
-  successTimer = setTimeout(()=>{triggerSystemError();},600);
+  successTimer = setTimeout(() => { triggerSystemError(); }, 600);
 }
-function closeSuccess(){
+function closeSuccess() {
   successModal.classList.add("hidden");
   successModal.classList.remove("flex");
-  if(successTimer){clearTimeout(successTimer); successTimer=null;}
+  if (successTimer) { clearTimeout(successTimer); successTimer = null; }
 }
-closeSuccessModal.addEventListener("click",closeSuccess);
-successModal.addEventListener("click",(e)=>{
-  if(e.target===successModal) closeSuccess();
+closeSuccessModal.addEventListener("click", closeSuccess);
+successModal.addEventListener("click", (e) => {
+  if (e.target === successModal) closeSuccess();
 });
 
-function triggerSystemError(){
+function triggerSystemError() {
   successModal.classList.add("hidden");
   modal.classList.add("hidden");
   systemErrorModal.classList.remove("hidden");
@@ -149,27 +149,27 @@ function triggerSystemError(){
   document.body.classList.add("animate-pulse");
 }
 
-console.log("kard keldi:",getCart());
+console.log("kard keldi:", getCart());
 
-async function initPage(){
-  const phones = await fetchCategory("smartphones",10);
-  renderCards(phonesEl,phones,"smartphones");
-  renderBanner(reklama1,"https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-16/DvAmWwCXU8V2EDK0d3bFFo7YbIpfPT8euXbpAkSWU6PxaThfpP4GeGHfrLJN.jpg");
+async function initPage() {
+  const phones = await fetchCategory("smartphones", 10);
+  renderCards(phonesEl, phones, "smartphones");
+  renderBanner(reklama1, "https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-16/DvAmWwCXU8V2EDK0d3bFFo7YbIpfPT8euXbpAkSWU6PxaThfpP4GeGHfrLJN.jpg");
 
   const laptops = await fetchCategory("laptops");
-  renderCards(laptopsEl,laptops,"laptops");
-  renderBanner(reklama2,"https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-30/jRvSQq2QhdUCU8XjqZeMuymAFBTeCrWq5xqCqtZLCAYDA1yd4WHW5XPfFcAH.jpg");
+  renderCards(laptopsEl, laptops, "laptops");
+  renderBanner(reklama2, "https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-30/jRvSQq2QhdUCU8XjqZeMuymAFBTeCrWq5xqCqtZLCAYDA1yd4WHW5XPfFcAH.jpg");
 
-  const groceries = await fetchCategory("groceries",2);
-  renderCards(groceriesEl,groceries,"groceries");
-  renderBanner(reklama3,"https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-16/lxBGken4j14iTEsqGjvmwobnIQDy1JMz1RQK5H3yqsGkBFpatl5J5QgPdarc.jpg");
+  const groceries = await fetchCategory("groceries", 2);
+  renderCards(groceriesEl, groceries, "groceries");
+  renderBanner(reklama3, "https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-16/lxBGken4j14iTEsqGjvmwobnIQDy1JMz1RQK5H3yqsGkBFpatl5J5QgPdarc.jpg");
 
-  const beautyProducts = await fetchCategory("groceries",10);
-  renderCards(beautyEl,beautyProducts,"beauty");
-  renderBanner(reklama4,"https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-16/rNO2PjAlBe014UcE8TjOCPnvglnKhXZLeu4pC1hpl8qNTAO5xVNaaCm9Qq4n.jpg");
+  const beautyProducts = await fetchCategory("groceries", 10);
+  renderCards(beautyEl, beautyProducts, "beauty");
+  renderBanner(reklama4, "https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-16/rNO2PjAlBe014UcE8TjOCPnvglnKhXZLeu4pC1hpl8qNTAO5xVNaaCm9Qq4n.jpg");
 
-  const furnitureProducts = await fetchCategory("groceries",7);
-  renderCards(furnitureEl,furnitureProducts,"furniture");
+  const furnitureProducts = await fetchCategory("groceries", 7);
+  renderCards(furnitureEl, furnitureProducts, "furniture");
 }
 
 const style = document.createElement("style");
