@@ -13,44 +13,8 @@
 <body>
 
 
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-
-<section id="sardor" class="max-w-7xl mx-auto px-4 py-8">
-    <div class="flex items-center justify-between mb-6">
-    <h2 class="text-2xl font-semibold">Бренды</h2>
-    <a href="#" class="text-red-500 text-sm hover:underline">
-      Посмотреть все →
-    </a>
-  </div>
-     <div class="bg-white rounded-xl p-5 text-center shadow hover:shadow-lg transition">
-      <img src="https://www.svgrepo.com/show/511330/apple-173.svg" class="mx-auto h-16 mb-4" alt="Apple">
-      <h2 class="text-sm text-red-500">все товары ></h2>
-<div class="flex items-center  ">
-      <img class="" src="https://olcha.uz/image/128x128/category/HNa7cUNc3ZmusOifaui3ILWGymcH1dQiFqkaKJzagTlqcOUgCs6Q3yr3pwis.png" alt="">
-      <img class="" src="https://olcha.uz/image/128x128/category/VHfLdXIi8WVvhYGxrhdQUVpA2N11hgJEcA4C8uf4sSk4EejpDg1Qhx2lslTF.png" alt="">
-      <img class="" src="https://olcha.uz/image/128x128/category/4rZuiDyns6OagIpAvvAsKvSSO2ljbZOcch1r1yhs5CW9uDmWgKdXg5NoaqSX.png" alt="">
-      <p class=" text-sm text-gray-600">Акустика</p>
-      <p class=" text-sm text-gray-600">Медиаплееры</p>
-      <p class=" text-sm  text-gray-600">Очки VR</p>
-      </div>
-    </div>
-
-
-</section> -->
-
-<section class="max-w-7xl mx-auto px-4 py-8">
- 
+<section class="max-w-7xl mx-auto px-4">
+  <!-- Title -->
   <div class="flex items-center justify-between mb-6">
     <h2 class="text-2xl font-semibold">Бренды</h2>
     <a href="#" class="text-red-500 text-sm hover:underline">
@@ -58,62 +22,165 @@
     </a>
   </div>
 
+  <!-- Brands grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5  ">
-  
-    <div class="bg-white rounded-xl p-5 text-center shadow hover:shadow-lg transition w-[350px] ">
-      <div class="flex items-center justify-center  gap-[120px] ">     
-         <img class="max-w-[40px]" src="https://www.svgrepo.com/show/511330/apple-173.svg " class="mx-auto h-16 mb-4 " alt="Apple ">
-        <h2 class="text-red-500 pt-[2 0px] pl-[40px]">все товары ></h2></div>
+    <!-- CARD -->
+    <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
+      <!-- header -->
+      <div class="flex items-center justify-between mb-5">
+        <img class="w-8" src="https://www.svgrepo.com/show/511330/apple-173.svg" alt="Apple">
+        <a href="#" class="text-red-500 text-xs font-medium hover:underline">
+          ВСЕ ТОВАРЫ →
+        </a>
+      </div>
 
-      <div class="pt-[30px]">
-      <div class="flex items-center justify-center flex-wrap w-[350px] gap-[20px]">
-      <img class="w-[100px] pr-[20px]" src="https://olcha.uz/image/128x128/category/HNa7cUNc3ZmusOifaui3ILWGymcH1dQiFqkaKJzagTlqcOUgCs6Q3yr3pwis.png" alt="">
-      <img class="w-[100px]  pr-[20px]" src="https://olcha.uz/image/128x128/category/VHfLdXIi8WVvhYGxrhdQUVpA2N11hgJEcA4C8uf4sSk4EejpDg1Qhx2lslTF.png" alt="">
-      <img class="w-[100px]  pr-[20px]" src="https://olcha.uz/image/128x128/category/4rZuiDyns6OagIpAvvAsKvSSO2ljbZOcch1r1yhs5CW9uDmWgKdXg5NoaqSX.png" alt="">
-       </div>
-         <div class="flex items-center justify-center flex-wrap w-[350px]  ">
-      <p class="text-sm text-gray-600  pr-[20px]">Акустика</p>
-      <p class="text-sm text-gray-600  pr-[20px]">Медиаплееры</p>
-      <p class="text-sm text-gray-600  pr-[20px]">Очки VR</p>
-     </div>
-     </div>
-</div>
+      <!-- products -->
+      <div class="grid grid-cols-3 gap-4 text-center">
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/HNa7cUNc3ZmusOifaui3ILWGymcH1dQiFqkaKJzagTlqcOUgCs6Q3yr3pwis.png">
+          <p class="text-xs text-gray-600">Акустика</p>
+        </div>
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/VHfLdXIi8WVvhYGxrhdQUVpA2N11hgJEcA4C8uf4sSk4EejpDg1Qhx2lslTF.png">
+          <p class="text-xs text-gray-600">Медиаплееры</p>
+        </div>
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/4rZuiDyns6OagIpAvvAsKvSSO2ljbZOcch1r1yhs5CW9uDmWgKdXg5NoaqSX.png">
+          <p class="text-xs text-gray-600">Очки VR</p>
+        </div>
+      </div>
     </div>
 
-   
+    <!-- SAMSUNG -->
+  <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
+      <div class="flex items-center justify-between mb-5">
+        <img class="h-6" src="https://olcha.uz/uploads/images/manufacturer/KK/KK/Ko/1667553735.png">
+        <a class="text-red-500 text-xs font-medium">ВСЕ ТОВАРЫ →</a>
+      </div>
+      <div class="grid grid-cols-3 gap-4 text-center">
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/FIsAVytQy3Up6SRiF65N82VE6xgDZJTQj4kgxx60ad9MSnnEEhVKa1KykdkY.png">
+          <p class="text-xs text-gray-600">Телевизоры</p>
+        </div>
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/Zzb97hGmwgC8EpGI3uVEwgdtvf4k9Wx404mtejcvF2qvbTSIA6HMben2CDJL.png">
+          <p class="text-xs text-gray-600">Мониторы</p>
+        </div>
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/b9ndmxu7R1o0rNIfa66oTO5C8yGLz0rqSKPVIgsNOXf11pmxhJkp7zTOCZet.png">
+          <p class="text-xs text-gray-600">SSD</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SONY -->
+    <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
+      <div class="flex items-center justify-between mb-5">
+        <img class="h-6" src="https://olcha.uz/uploads/images/manufacturer/KK/KK/Kd/1646038705.jpg">
+        <a class="text-red-500 text-xs font-medium">ВСЕ ТОВАРЫ →</a>
+      </div>
+      <div class="grid grid-cols-3 gap-4 text-center">
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/FIsAVytQy3Up6SRiF65N82VE6xgDZJTQj4kgxx60ad9MSnnEEhVKa1KykdkY.png">
+          <p class="text-xs text-gray-600">Телевизоры</p>
+        </div>
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/SCaz0uerg7WUKCf6e1ezZ67Tw7OzYMliaAs8QTbPjn9E0R2mmyWyEIC1ErhQ.png">
+          <p class="text-xs text-gray-600">Музыка</p>
+        </div>
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/HNa7cUNc3ZmusOifaui3ILWGymcH1dQiFqkaKJzagTlqcOUgCs6Q3yr3pwis.png">
+          <p class="text-xs text-gray-600">Акустика</p>
+        </div>
+      </div>
+    </div>
 
 
 
 
 
-   
 
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5  ">
-  
-    <div class="bg-white rounded-xl p-5 text-center shadow hover:shadow-lg transition w-[350px] ">
-      <div class="flex items-center justify-center  gap-[120px] ">     
-         <img class="w-[50px] " src="https://olcha.uz/uploads/images/manufacturer/KK/KK/Ko/1667553735.png" class="  h-16 mb-4 " alt=" ">
-        <h2 class="text-red-500 pt-[2 0px] pl-[40px]">все товары ></h2></div>
+      <!-- SONY -->
+    <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
+      <div class="flex items-center justify-between mb-5">
+        <img class="h-6" src="https://olcha.uz/uploads/images/manufacturer/KK/KK/Ka/1664348028.png">
+        <a class="text-red-500 text-xs font-medium">ВСЕ ТОВАРЫ →</a>
+      </div>
+      <div class="grid grid-cols-3 gap-4 text-center">
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/VZnCHXlHhCMJNL8KChM7IuLCg2tLaa5g1TkEvHFxjSRz3npBWIP3qi6vjtxl.png">
+          <p class="text-xs text-gray-600">Парфюмерия для женщин</p>
+        </div>
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/IGFNO9wFic9eoNI6OOV2lxWe7cQ4njGQxfrzpRfaoP3XJoPtKGKQ9UObVsIB.png">
+          <p class="text-xs text-gray-600">Парфюмерия для мужчин</p>
+        </div>
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/Kvm31gfqeBO4hF3lKs6osqKTir32S4myM6xY986G9ruwptEedash0T8V2wMO.png">
+          <p class="text-xs text-gray-600">Наборы парфюмерии</p>
+        </div>
+      </div>
+    </div>
 
-      <div class="pt-[30px]">
-      <div class="flex items-center justify-center flex-wrap w-[350px] gap-[20px]">
-      <img class="w-[100px] pr-[20px]" src="https://olcha.uz/image/128x128/category/FIsAVytQy3Up6SRiF65N82VE6xgDZJTQj4kgxx60ad9MSnnEEhVKa1KykdkY.png" alt="">
-      <img class="w-[100px]  pr-[20px]" src="https://olcha.uz/image/128x128/category/b9ndmxu7R1o0rNIfa66oTO5C8yGLz0rqSKPVIgsNOXf11pmxhJkp7zTOCZet.png" alt="">
-      <img class="w-[100px]  pr-[20px]" src="https://olcha.uz/image/128x128/category/PfcfeDqNbEzAMOYWFMPJDvBOZCd8TJfOZ7ycuhurG551aKhfHwG9Rp8jOyqe.png" alt="">
-       </div>
-         <div class="flex items-center justify-center flex-wrap w-[350px]  ">
-      <p class="text-sm text-gray-600  pr-[20px]">Акустика</p>
-      <p class="text-sm text-gray-600  pr-[20px]">Медиаплееры</p>
-      <p class="text-sm text-gray-600  pr-[20px]">Очки VR</p>
-     </div>
-     </div>
-</div>
+
+
+    <!-- SONY -->
+    <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
+      <div class="flex items-center justify-between mb-5">
+        <img class="h-6" src="https://olcha.uz/uploads/images/manufacturer/KK/KK/Kp/1646038892.jpg">
+        <a class="text-red-500 text-xs font-medium">ВСЕ ТОВАРЫ →</a>
+      </div>
+      <div class="grid grid-cols-3 gap-4 text-center">
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/FIsAVytQy3Up6SRiF65N82VE6xgDZJTQj4kgxx60ad9MSnnEEhVKa1KykdkY.png">
+          <p class="text-xs text-gray-600">Телевизоры</p>
+        </div>
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/SCaz0uerg7WUKCf6e1ezZ67Tw7OzYMliaAs8QTbPjn9E0R2mmyWyEIC1ErhQ.png">
+          <p class="text-xs text-gray-600">Музыка</p>
+        </div>
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/HNa7cUNc3ZmusOifaui3ILWGymcH1dQiFqkaKJzagTlqcOUgCs6Q3yr3pwis.png">
+          <p class="text-xs text-gray-600">Акустика</p>
+        </div>
+      </div>
     </div>
 
     
+
+
+     <!-- SONY -->
+    <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
+      <div class="flex items-center justify-between mb-5">
+        <img class="h-6" src="https://olcha.uz/uploads/images/manufacturer/KK/KK/KB/1646038994.jpg">
+        <a class="text-red-500 text-xs font-medium">ВСЕ ТОВАРЫ →</a>
+      </div>
+      <div class="grid grid-cols-3 gap-4 text-center">
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/FIsAVytQy3Up6SRiF65N82VE6xgDZJTQj4kgxx60ad9MSnnEEhVKa1KykdkY.png">
+          <p class="text-xs text-gray-600">Телевизоры</p>
+        </div>
+        <div>
+          <img class="mx-auto w-20 mb-2" src="https://olcha.uz/image/128x128/category/b9ndmxu7R1o0rNIfa66oTO5C8yGLz0rqSKPVIgsNOXf11pmxhJkp7zTOCZet.png">
+          <p class="text-xs text-gray-600">Мониторы</p>
+        </div>
+        <div><img loading="lazy" width="128" height="128" src="https://olcha.uz/image/128x128/category/" alt="Стиральные машины" title="Стиральные машины">
+          <p class="text-xs text-gray-600">Стиральные машины</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
 </section>
 </body>
 
 </html>
+
