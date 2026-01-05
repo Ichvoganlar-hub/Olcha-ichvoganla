@@ -1,0 +1,18 @@
+.btnHeart:hover svg path{
+	fill: red ;
+	
+}
+
+.btnStatic:hover svg path{
+	fill: red;
+
+}
+
+
+.korzinkaBtn:hover path {
+	fill: white;
+	
+}
+.korzinkaBtn:hover{
+	background-color: black;
+}
