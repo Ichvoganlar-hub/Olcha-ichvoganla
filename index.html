@@ -100,7 +100,7 @@
             class="flex items-center bg-gray-100 w-[680px] h-[50px] rounded-lg"
           >
             <input
-              class="ml-4 flex-1 text-sm bg-transparent outline-none"
+              class="searchInput ml-4 flex-1 text-sm bg-transparent outline-none"
               placeholder="Katalog bo‘yicha qidirish"
               type="text"
             />
@@ -159,9 +159,8 @@
       </nav>
     </header>
     <main>
-      <!-- abdulloh abu70 -->
       <section class="max-w-7xl mx-auto p-4">
-        <div id="phones" class="flex flex-wrap gap-4"></div>
+        <div id="phones" class="flex flex-wrap gap-4 search-wrapper"></div>
         <div id="reklama1"></div>
         <div id="laptops" class="flex gap-4"></div>
         <div id="reklama2"></div>
@@ -171,7 +170,7 @@
         <div id="beauty" class="flex flex-wrap gap-4"></div>
         <div id="reklama4"></div>
         <div id="furniture" class="flex flex-wrap gap-4"></div>
-        <div class="flex py-8 justify-between">
+        <div class="">
           <img
             class="w-[60%] rounded-md"
             src="https://olcha.uz/image/original/homePage/cdn_1/2024-06-21/yotr1FzMpoaa6nQ4DPpcXboD8v063uViSWkEgVw5Hmvgd2tFfAhGOHGwlvSj.jpg"
@@ -741,6 +740,35 @@
               <p class="text-xs text-gray-600">Стиральные машины</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        id="appleModal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50"
+      >
+        <div class="bg-white rounded-lg max-w-lg w-full p-6 relative">
+          <button
+            id="closeModal"
+            class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+          >
+            ✕
+          </button>
+
+          <h2 class="text-xl font-semibold mb-4">Apple Product Details</h2>
+          <img
+            id="modalImg"
+            src=""
+            alt="Product Image"
+            class="w-full h-60 object-contain mb-4"
+          />
+          <p id="modalTitle" class="text-lg font-medium mb-2"></p>
+          <p id="modalPrice" class="text-red-500 font-semibold mb-2"></p>
+          <p id="modalDesc" class="text-gray-700 text-sm">
+            Detailed product description goes here.
+          </p>
         </div>
       </div>
     </section>
