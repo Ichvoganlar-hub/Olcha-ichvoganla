@@ -1,628 +1,831 @@
 <!DOCTYPE html>
 <html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Olcha.uz</title>
+  </head>
 
-  <title>Olcha.uz</title>
-</head>
-
-<body class="bg-white text-black">
-  <header>
-    <nav class="max-w-7xl mx-auto">
-      <img class="" src="https://olcha.uz/uploads/advertising/images/top/CFq92oqp7cNK15Q1KRQvIaQkko9KSCTrkPolR98n.jpg"
-        alt="Top banner" />
-    </nav>
-    <style>
-      .snowflake {
-        position: fixed;
-        top: -10px;
-        color: white;
-        user-select: none;
-        pointer-events: none;
-        z-index: 9999;
-        animation: fall linear infinite;
-      }
-
-      @keyframes fall {
-        to {
-          transform: translateY(110vh);
-        }
-      }
-    </style>
-    <nav class="bg-red-600">
-      <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16 text-white text-sm">
-        <div class="flex items-center gap-3">
-          <button class="border-2 border-white rounded-lg px-3 py-1 hover:bg-white hover:text-red-600 transition">
-            0% Muddatli to'lov
-          </button>
-          <button class="border-2 border-white rounded-lg px-3 py-1 hover:bg-white hover:text-red-600 transition">
-            Chegirmalar
-          </button>
-          <button class="border-2 border-white rounded-lg px-3 py-1 hover:bg-white hover:text-red-600 transition">
-            Yutuqli o'yinlar
-          </button>
-          <a href="#" class="hover:underline"> Sayt xaritasi </a>
-        </div>
-
-        <div class="flex items-center gap-4">
-          <span class="font-semibold text-sm">+998 (71) 202 202 1</span>
-
-          <button class="border-2 border-white rounded-lg px-3 py-1 hover:bg-white hover:text-red-600 transition">
-            olcha da soting
-          </button>
-
-          <div class="flex gap-2 border-l border-r px-3 text-sm">
-            <button class="hover:underline">Ўз</button>
-            <button class="hover:underline">Oz</button>
-            <button class="hover:underline">Рус</button>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <nav class="mt-8 max-w-7xl mx-auto px-4">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-[20px]">
-          <a href="./index.html">
-            <img class="w-[130px]" src="https://olcha.uz/_nuxt/plus.lRzD4Jf7.png" alt="Olcha logo" />
-          </a>
-
-          <button class="border-2 rounded-lg p-2">
-            <img class="w-[104px]" src="./img.imoil/Screenshot 2025-12-28 122737.png" alt="Katalog" />
-          </button>
-        </div>
-
-        <button class="flex items-center bg-gray-100 w-[680px] h-[50px] rounded-lg">
-          <input class="ml-4 flex-1 text-sm bg-transparent outline-none" placeholder="Katalog bo‘yicha qidirish"
-            type="text" />
-          <div class="mr-2 bg-red-600 w-[56px] h-[40px] rounded-md flex items-center justify-center">
-            <img class="w-[26px] h-[26px]" src="./img.imoil/search (1).png" alt="Search" />
-          </div>
-        </button>
-
-        <div class="flex gap-5 text-xs">
-          <a href="#" class="flex flex-col items-center gap-1">
-            <img class="w-[22px] h-[22px]" src="./img.imoil/stats.png" alt="" />
-            <span>Taqqoslash</span>
-          </a>
-
-          <a href="./sevimlilar.html" class="flex flex-col items-center gap-1">
-            <img class="w-[22px] h-[22px]" src="./img.imoil/heart-svgrepo-com.svg" alt="" />
-            <span>Sevimlilar</span>
-          </a>
-
-          <a href="./korzinka.html" class="flex flex-col items-center gap-1">
-            <img class="w-[22px] h-[22px]" src="./img.imoil/cart-shopping-svgrepo-com.svg" alt="" />
-            <span>Savatcha</span>
-          </a>
-
-          <a href="#" class="flex flex-col items-center gap-1">
-            <img class="w-[22px] h-[22px]" src="./img.imoil/user-alt-1-svgrepo-com.svg" alt="" />
-            <span>Kirish</span>
-          </a>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <!-- abdulloh abu70 -->
-    <section class="max-w-7xl mx-auto p-4">
-      <div id="phones" class="flex flex-wrap gap-4"></div>
-      <div id="reklama1"></div>
-      <div id="laptops" class="flex gap-4"></div>
-      <div id="reklama2"></div>
-      <div id="automotive" class="flex gap-4"></div>
-      <div id="groceries" class="flex flex-wrap gap-4"></div>
-      <div id="reklama3"></div>
-      <div id="beauty" class="flex flex-wrap gap-4"></div>
-      <div id="reklama4"></div>
-      <div id="furniture" class="flex flex-wrap gap-4"></div>
-      <div class="flex py-8 justify-between">
-        <img class="w-[60%] rounded-md"
-          src="https://olcha.uz/image/original/homePage/cdn_1/2024-06-21/yotr1FzMpoaa6nQ4DPpcXboD8v063uViSWkEgVw5Hmvgd2tFfAhGOHGwlvSj.jpg"
-          alt="" />
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="bg-white rounded-xl p-4 shadow-sm">
-            <img
-              src="https://olcha.uz/image/220x220/products/fJUCbjhIo15C5srsC1cWoTcWqPcpSCjtHodfP6MSA7NT8DDE24EsJZRo6Naf.jpg"
-              class="w-full h-36 object-contain mb-3" />
-            <h3 class="text-sm font-medium">Ноутбук MSI Raider GE77HX</h3>
-            <p class="font-bold mt-2">67 080 874 сум</p>
-            <span class="inline-block mt-2 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full">
-              7 856 000 сум x 12 мес
-            </span>
-          </div>
-
-          <div class="bg-white rounded-xl p-4 shadow-sm">
-            <img
-              src="https://olcha.uz/image/220x220/products/cdn_1/supplier/stores/1/2024-06-07/tqGChmLwX0hSVWVgVE9w74jCJgOuFRwgDQ0FXQLMA1mWoJhRi1zG9iOlaKtG.JPG"
-              class="w-full h-36 object-contain mb-3" />
-            <h3 class="text-sm font-medium">Sony WH-CH720N</h3>
-            <p class="font-bold mt-2">1 477 043 сум</p>
-            <span class="inline-block mt-2 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full">
-              174 000 сум x 12 мес
-            </span>
-          </div>
-
-          <div class="bg-white rounded-xl p-4 shadow-sm sm:col-span-2 w-[50%]">
-            <img
-              src="https://olcha.uz/image/220x220/products/VyPgqUqD96sheF0OHYCf3rk14n9rMUyBrMaG9zFreCRAepW4k78ktVxIbd8f.jpg"
-              class="w-full h-36 object-contain mb-3" />
-            <h3 class="text-sm font-medium">Samsung Galaxy Buds 2</h3>
-            <p class="font-bold mt-2">1 500 000 сум</p>
-            <span class="inline-block mt-2 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full">
-              176 000 сум x 12 мес
-            </span>
-          </div>
-        </div>
-      </div>
+  <body class="bg-white text-black">
+    <header>
+      <nav class="max-w-7xl mx-auto">
+        <img
+          class=""
+          src="https://olcha.uz/uploads/advertising/images/top/CFq92oqp7cNK15Q1KRQvIaQkko9KSCTrkPolR98n.jpg"
+          alt="Top banner"
+        />
+      </nav>
       <style>
-        .heart-btn.active .heart-icon path {
-          fill: red !important;
-          stroke: red !important;
+        .snowflake {
+          position: fixed;
+          top: -10px;
+          color: white;
+          user-select: none;
+          pointer-events: none;
+          z-index: 9999;
+          animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+          to {
+            transform: translateY(110vh);
+          }
         }
       </style>
-      <div id="productModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
-        <div class="bg-white rounded-xl w-[900px] max-w-[95%] p-6 relative">
-          <button id="closeModal" class="absolute top-4 right-4 text-2xl">
-            &times;
-          </button>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-gray-100 rounded-xl p-4 flex items-center justify-center">
-              <img id="modalImg" src="" class="max-h-[350px] object-contain" />
-            </div>
-            <div class="flex flex-col gap-4">
-              <h2 id="modalTitle" class="text-2xl font-bold"></h2>
-              <p id="modalPrice" class="text-2xl font-bold"></p>
-              <div>
-                <p class="font-medium mb-2">Xotira:</p>
-                <div class="flex gap-2">
-                  <button class="border px-4 py-2 rounded">8/128 GB</button>
-                  <button class="border px-4 py-2 rounded">6/128 GB</button>
-                  <button class="border px-4 py-2 rounded">8/256 GB</button>
-                </div>
-              </div>
-              <button id="addToCartBtn"
-                class="bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">
-                Korzinkaga qo‘shish
-              </button>
+      <nav class="bg-red-600">
+        <div
+          class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16 text-white text-sm"
+        >
+          <div class="flex items-center gap-3">
+            <button
+              class="border-2 border-white rounded-lg px-3 py-1 hover:bg-white hover:text-red-600 transition"
+            >
+              0% Muddatli to'lov
+            </button>
+            <button
+              class="border-2 border-white rounded-lg px-3 py-1 hover:bg-white hover:text-red-600 transition"
+            >
+              Chegirmalar
+            </button>
+            <button
+              class="border-2 border-white rounded-lg px-3 py-1 hover:bg-white hover:text-red-600 transition"
+            >
+              Yutuqli o'yinlar
+            </button>
+            <a href="#" class="hover:underline"> Sayt xaritasi </a>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <span class="font-semibold text-sm">+998 (71) 202 202 1</span>
+
+            <button
+              class="border-2 border-white rounded-lg px-3 py-1 hover:bg-white hover:text-red-600 transition"
+            >
+              olcha da soting
+            </button>
+
+            <div class="flex gap-2 border-l border-r px-3 text-sm">
+              <button class="hover:underline">Ўз</button>
+              <button class="hover:underline">Oz</button>
+              <button class="hover:underline">Рус</button>
             </div>
           </div>
         </div>
-      </div>
-      <div id="successModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[60]">
-        <div class="bg-white rounded-2xl p-8 text-center w-[360px] relative">
-          <img src="https://cdn-icons-png.flaticon.com/512/742/742751.png" class="w-24 mx-auto mb-4" alt="success" />
+      </nav>
 
-          <h2 class="text-xl font-bold mb-2">✅ Muvaffaqiyatli!</h2>
-          <p class="text-gray-600 mb-6">Tovar korzinkaga qo‘shildi</p>
+      <nav class="mt-8 max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-[20px]">
+            <a href="./index.html">
+              <img
+                class="w-[130px]"
+                src="https://olcha.uz/_nuxt/plus.lRzD4Jf7.png"
+                alt="Olcha logo"
+              />
+            </a>
 
-          <button id="closeSuccessModal" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition">
-            OK
+            <button class="border-2 rounded-lg p-2">
+              <img
+                class="w-[104px]"
+                src="./img.imoil/Screenshot 2025-12-28 122737.png"
+                alt="Katalog"
+              />
+            </button>
+          </div>
+
+          <button
+            class="flex items-center bg-gray-100 w-[680px] h-[50px] rounded-lg"
+          >
+            <input
+              class="ml-4 flex-1 text-sm bg-transparent outline-none"
+              placeholder="Katalog bo‘yicha qidirish"
+              type="text"
+            />
+            <div
+              class="mr-2 bg-red-600 w-[56px] h-[40px] rounded-md flex items-center justify-center"
+            >
+              <img
+                class="w-[26px] h-[26px]"
+                src="./img.imoil/search (1).png"
+                alt="Search"
+              />
+            </div>
           </button>
+
+          <div class="flex gap-5 text-xs">
+            <a href="#" class="flex flex-col items-center gap-1">
+              <img
+                class="w-[22px] h-[22px]"
+                src="./img.imoil/stats.png"
+                alt=""
+              />
+              <span>Taqqoslash</span>
+            </a>
+
+            <a
+              href="./sevimlilar.html"
+              class="flex flex-col items-center gap-1"
+            >
+              <img
+                class="w-[22px] h-[22px]"
+                src="./img.imoil/heart-svgrepo-com.svg"
+                alt=""
+              />
+              <span>Sevimlilar</span>
+            </a>
+
+            <a href="./korzinka.html" class="flex flex-col items-center gap-1">
+              <img
+                class="w-[22px] h-[22px]"
+                src="./img.imoil/cart-shopping-svgrepo-com.svg"
+                alt=""
+              />
+              <span>Savatcha</span>
+            </a>
+
+            <a href="#" class="flex flex-col items-center gap-1">
+              <img
+                class="w-[22px] h-[22px]"
+                src="./img.imoil/user-alt-1-svgrepo-com.svg"
+                alt=""
+              />
+              <span>Kirish</span>
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
-    <div class="PakimonJonka p-10 bg-gray-200">
-      <section class="container mx-auto w-[85%]">
-        <div class="container max-w-7xl mx-auto">
-          <div class="flex flex-col gap-[10px]">
-            <div class="flex justify-between">
-              <div>
-                <h3 class="text-[32px] font-semibold">Техника Apple</h3>
-              </div>
-              <div class="flex items-center">
-                <a class="text-[13px] text-red-600" href="">Посмотреть все</a>
-                <img class="w-[20px]" src="./pakimon`sImgs/right (2).png" alt="" />
-              </div>
+      </nav>
+    </header>
+    <main>
+      <!-- abdulloh abu70 -->
+      <section class="max-w-7xl mx-auto p-4">
+        <div id="phones" class="flex flex-wrap gap-4"></div>
+        <div id="reklama1"></div>
+        <div id="laptops" class="flex gap-4"></div>
+        <div id="reklama2"></div>
+        <div id="automotive" class="flex gap-4"></div>
+        <div id="groceries" class="flex flex-wrap gap-4"></div>
+        <div id="reklama3"></div>
+        <div id="beauty" class="flex flex-wrap gap-4"></div>
+        <div id="reklama4"></div>
+        <div id="furniture" class="flex flex-wrap gap-4"></div>
+        <div class="flex py-8 justify-between">
+          <img
+            class="w-[60%] rounded-md"
+            src="https://olcha.uz/image/original/homePage/cdn_1/2024-06-21/yotr1FzMpoaa6nQ4DPpcXboD8v063uViSWkEgVw5Hmvgd2tFfAhGOHGwlvSj.jpg"
+            alt=""
+          />
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-white rounded-xl p-4 shadow-sm">
+              <img
+                src="https://olcha.uz/image/220x220/products/fJUCbjhIo15C5srsC1cWoTcWqPcpSCjtHodfP6MSA7NT8DDE24EsJZRo6Naf.jpg"
+                class="w-full h-36 object-contain mb-3"
+              />
+              <h3 class="text-sm font-medium">Ноутбук MSI Raider GE77HX</h3>
+              <p class="font-bold mt-2">67 080 874 сум</p>
+              <span
+                class="inline-block mt-2 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full"
+              >
+                7 856 000 сум x 12 мес
+              </span>
             </div>
-            <div class="flex gap-[20px]">
-              <a href="">
-                <div class="w-[344px] flex flex-col gap-[20px] relative bg-white rounded-lg px-[20px]">
-                  <div class="">
-                    <img class="h-[280px] w-full"
-                      src="https://olcha.uz/image/220x220/products/oeOsArYZhSFQeIFhNzxJpcrKS6IIfgYx8UAor7Qk51Y9xjkUY3t8zJdu29ve.jpg"
-                      alt="" />
-                    <button class="btnHeart">
-                      <svg class="w-[30px] h-[30px] p-[5px] absolute top-[20px] right-[20px] rounded-full bg-white"
-                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M8.96173 18.9109L9.42605 18.3219L8.96173 18.9109ZM12 5.50063L11.4596 6.02073C11.601 6.16763 11.7961 6.25063 12 6.25063C12.2039 6.25063 12.399 6.16763 12.5404 6.02073L12 5.50063ZM15.0383 18.9109L15.5026 19.4999L15.0383 18.9109ZM9.42605 18.3219C7.91039 17.1271 6.25307 15.9603 4.93829 14.4798C3.64922 13.0282 2.75 11.3345 2.75 9.1371H1.25C1.25 11.8026 2.3605 13.8361 3.81672 15.4758C5.24723 17.0866 7.07077 18.3752 8.49742 19.4999L9.42605 18.3219ZM2.75 9.1371C2.75 6.98623 3.96537 5.18252 5.62436 4.42419C7.23607 3.68748 9.40166 3.88258 11.4596 6.02073L12.5404 4.98053C10.0985 2.44352 7.26409 2.02539 5.00076 3.05996C2.78471 4.07292 1.25 6.42503 1.25 9.1371H2.75ZM8.49742 19.4999C9.00965 19.9037 9.55954 20.3343 10.1168 20.6599C10.6739 20.9854 11.3096 21.25 12 21.25V19.75C11.6904 19.75 11.3261 19.6293 10.8736 19.3648C10.4213 19.1005 9.95208 18.7366 9.42605 18.3219L8.49742 19.4999ZM15.5026 19.4999C16.9292 18.3752 18.7528 17.0866 20.1833 15.4758C21.6395 13.8361 22.75 11.8026 22.75 9.1371H21.25C21.25 11.3345 20.3508 13.0282 19.0617 14.4798C17.7469 15.9603 16.0896 17.1271 14.574 18.3219L15.5026 19.4999ZM22.75 9.1371C22.75 6.42503 21.2153 4.07292 18.9992 3.05996C16.7359 2.02539 13.9015 2.44352 11.4596 4.98053L12.5404 6.02073C14.5983 3.88258 16.7639 3.68748 18.3756 4.42419C20.0346 5.18252 21.25 6.98623 21.25 9.1371H22.75ZM14.574 18.3219C14.0479 18.7366 13.5787 19.1005 13.1264 19.3648C12.6739 19.6293 12.3096 19.75 12 19.75V21.25C12.6904 21.25 13.3261 20.9854 13.8832 20.6599C14.4405 20.3343 14.9903 19.9037 15.5026 19.4999L14.574 18.3219Z"
-                          fill="#808080" />
-                      </svg>
-                    </button>
-                    <button class="btnStatic">
-                      <svg class="w-[30px] absolute p-[5px] top-[60px] rotate-90 right-[20px] h-[30px]" width="800px"
-                        height="800px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
-                        <path fill="#808080" fill-rule="evenodd"
-                          d="M18 5a1 1 0 100-2H2a1 1 0 000 2h16zm0 4a1 1 0 100-2h-8a1 1 0 100 2h8zm1 3a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 5a1 1 0 100-2h-8a1 1 0 100 2h8z" />
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="flex flex-col gap-[5px] pb-[40px]">
-                    <p>Apple Magic mouse 3</p>
-                    <h2 class="text-[18px] font-semibold pt-[10px]">
-                      1 389 951 сум
-                    </h2>
-                    <p class="px-[3px] py-[2px] rounded-md w-[50%] bg-yellow-400 text-[14px]">
-                      163 000 сум x 12 мес
-                    </p>
-                  </div>
-                  <div class="flex gap-[10px] items-center">
-                    <button
-                      class="korzinkaBtn w-[36px] h-[35px] border-[2px] rounded-md flex justify-center items-center border-black">
-                      <svg class="w-[20px]" fill="#000000" viewBox="0 0 32 32" version="1.1"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M31.739 8.875c-0.186-0.264-0.489-0.422-0.812-0.422h-21.223l-1.607-5.54c-0.63-2.182-2.127-2.417-2.741-2.417h-4.284c-0.549 0-0.993 0.445-0.993 0.993s0.445 0.993 0.993 0.993h4.283c0.136 0 0.549 0 0.831 0.974l5.527 20.311c0.12 0.428 0.511 0.724 0.956 0.724h13.499c0.419 0 0.793-0.262 0.934-0.657l4.758-14.053c0.11-0.304 0.064-0.643-0.122-0.907zM25.47 22.506h-12.046l-3.161-12.066h19.253zM23.5 26.504c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5 2.5-1.119 2.5-2.5c0-1.381-1.119-2.5-2.5-2.5zM14.5 26.504c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5 2.5-1.119 2.5-2.5c0-1.381-1.119-2.5-2.5-2.5z">
-                        </path>
-                      </svg>
-                    </button>
-                    <button
-                      class="hover:bg-red-50 transition-all border-2 text-red-500 text-center w-[244px] p-[4px] rounded-md border-red-500">
-                      В рассрочку
-                    </button>
+
+            <div class="bg-white rounded-xl p-4 shadow-sm">
+              <img
+                src="https://olcha.uz/image/220x220/products/cdn_1/supplier/stores/1/2024-06-07/tqGChmLwX0hSVWVgVE9w74jCJgOuFRwgDQ0FXQLMA1mWoJhRi1zG9iOlaKtG.JPG"
+                class="w-full h-36 object-contain mb-3"
+              />
+              <h3 class="text-sm font-medium">Sony WH-CH720N</h3>
+              <p class="font-bold mt-2">1 477 043 сум</p>
+              <span
+                class="inline-block mt-2 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full"
+              >
+                174 000 сум x 12 мес
+              </span>
+            </div>
+
+            <div
+              class="bg-white rounded-xl p-4 shadow-sm sm:col-span-2 w-[50%]"
+            >
+              <img
+                src="https://olcha.uz/image/220x220/products/VyPgqUqD96sheF0OHYCf3rk14n9rMUyBrMaG9zFreCRAepW4k78ktVxIbd8f.jpg"
+                class="w-full h-36 object-contain mb-3"
+              />
+              <h3 class="text-sm font-medium">Samsung Galaxy Buds 2</h3>
+              <p class="font-bold mt-2">1 500 000 сум</p>
+              <span
+                class="inline-block mt-2 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full"
+              >
+                176 000 сум x 12 мес
+              </span>
+            </div>
+          </div>
+        </div>
+        <style>
+          .heart-btn.active .heart-icon path {
+            fill: red !important;
+            stroke: red !important;
+          }
+        </style>
+        <div
+          id="productModal"
+          class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50"
+        >
+          <div class="bg-white rounded-xl w-[900px] max-w-[95%] p-6 relative">
+            <button id="closeModal" class="absolute top-4 right-4 text-2xl">
+              &times;
+            </button>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div
+                class="bg-gray-100 rounded-xl p-4 flex items-center justify-center"
+              >
+                <img
+                  id="modalImg"
+                  src=""
+                  class="max-h-[350px] object-contain"
+                />
+              </div>
+              <div class="flex flex-col gap-4">
+                <h2 id="modalTitle" class="text-2xl font-bold"></h2>
+                <p id="modalPrice" class="text-2xl font-bold"></p>
+                <div>
+                  <p class="font-medium mb-2">Xotira:</p>
+                  <div class="flex gap-2">
+                    <button class="border px-4 py-2 rounded">8/128 GB</button>
+                    <button class="border px-4 py-2 rounded">6/128 GB</button>
+                    <button class="border px-4 py-2 rounded">8/256 GB</button>
                   </div>
                 </div>
-              </a>
-
-              <!-- bowqa img qatori -->
-              <a href="">
-                <div class="flex w-full h-[275px] gap-4">
-                  <iframe class="rounded-lg" width="450" height="276"
-                    src="https://www.youtube.com/embed/SH3lR2GLgT0?si=jrzO_tjV44DSGU5H" title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-                  <div
-                    class="w-[450px] flex gap-[20px] items-center justify-center relative bg-white rounded-lg px-[20px]">
-                    <div class="">
-                      <img class="w-[195px]"
-                        src="https://olcha.uz/image/220x220/products/supplier/stores/1/2023-05-20/N6u7M5ch87s5PkARnrTiwVeEo87y5hoxmsuCIBhlP2yAJr7QQ1Huse3gPffx.jpg"
-                        alt="" />
-                      <button class="btnHeart">
-                        <svg class="w-[30px] h-[30px] p-[5px] absolute top-[20px] right-[20px] rounded-full bg-white"
-                          viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M8.96173 18.9109L9.42605 18.3219L8.96173 18.9109ZM12 5.50063L11.4596 6.02073C11.601 6.16763 11.7961 6.25063 12 6.25063C12.2039 6.25063 12.399 6.16763 12.5404 6.02073L12 5.50063ZM15.0383 18.9109L15.5026 19.4999L15.0383 18.9109ZM9.42605 18.3219C7.91039 17.1271 6.25307 15.9603 4.93829 14.4798C3.64922 13.0282 2.75 11.3345 2.75 9.1371H1.25C1.25 11.8026 2.3605 13.8361 3.81672 15.4758C5.24723 17.0866 7.07077 18.3752 8.49742 19.4999L9.42605 18.3219ZM2.75 9.1371C2.75 6.98623 3.96537 5.18252 5.62436 4.42419C7.23607 3.68748 9.40166 3.88258 11.4596 6.02073L12.5404 4.98053C10.0985 2.44352 7.26409 2.02539 5.00076 3.05996C2.78471 4.07292 1.25 6.42503 1.25 9.1371H2.75ZM8.49742 19.4999C9.00965 19.9037 9.55954 20.3343 10.1168 20.6599C10.6739 20.9854 11.3096 21.25 12 21.25V19.75C11.6904 19.75 11.3261 19.6293 10.8736 19.3648C10.4213 19.1005 9.95208 18.7366 9.42605 18.3219L8.49742 19.4999ZM15.5026 19.4999C16.9292 18.3752 18.7528 17.0866 20.1833 15.4758C21.6395 13.8361 22.75 11.8026 22.75 9.1371H21.25C21.25 11.3345 20.3508 13.0282 19.0617 14.4798C17.7469 15.9603 16.0896 17.1271 14.574 18.3219L15.5026 19.4999ZM22.75 9.1371C22.75 6.42503 21.2153 4.07292 18.9992 3.05996C16.7359 2.02539 13.9015 2.44352 11.4596 4.98053L12.5404 6.02073C14.5983 3.88258 16.7639 3.68748 18.3756 4.42419C20.0346 5.18252 21.25 6.98623 21.25 9.1371H22.75ZM14.574 18.3219C14.0479 18.7366 13.5787 19.1005 13.1264 19.3648C12.6739 19.6293 12.3096 19.75 12 19.75V21.25C12.6904 21.25 13.3261 20.9854 13.8832 20.6599C14.4405 20.3343 14.9903 19.9037 15.5026 19.4999L14.574 18.3219Z"
-                            fill="#808080" />
-                        </svg>
-                      </button>
-                      <button class="btnStatic">
-                        <svg class="w-[30px] absolute p-[5px] top-[60px] rotate-90 right-[20px] h-[30px]" width="800px"
-                          height="800px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
-                          <path fill="#808080" fill-rule="evenodd"
-                            d="M18 5a1 1 0 100-2H2a1 1 0 000 2h16zm0 4a1 1 0 100-2h-8a1 1 0 100 2h8zm1 3a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 5a1 1 0 100-2h-8a1 1 0 100 2h8z" />
-                        </svg>
-                      </button>
-                    </div>
-                    <div class="flex flex-col gap-2">
-                      <div class="flex flex-col justify-center gap-[3px]">
-                        <p class="w-[280px]">
-                          Magic Keyboard Russian 12.9-inch 2021 Белый
-                        </p>
-                        <h2 class="text-[18px] font-semibold">
-                          1 389 951 сум
-                        </h2>
-                        <p class="px-[3px] py-[2px] rounded-md w-[50%] bg-yellow-400 text-[14px]">
-                          163 000 сум x 12 мес
-                        </p>
-                      </div>
-                      <div class="flex gap-[10px] items-center">
-                        <button
-                          class="korzinkaBtn w-[36px] h-[35px] border-[2px] rounded-md flex justify-center items-center border-black">
-                          <svg class="w-[20px]" fill="#000000" viewBox="0 0 32 32" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M31.739 8.875c-0.186-0.264-0.489-0.422-0.812-0.422h-21.223l-1.607-5.54c-0.63-2.182-2.127-2.417-2.741-2.417h-4.284c-0.549 0-0.993 0.445-0.993 0.993s0.445 0.993 0.993 0.993h4.283c0.136 0 0.549 0 0.831 0.974l5.527 20.311c0.12 0.428 0.511 0.724 0.956 0.724h13.499c0.419 0 0.793-0.262 0.934-0.657l4.758-14.053c0.11-0.304 0.064-0.643-0.122-0.907zM25.47 22.506h-12.046l-3.161-12.066h19.253zM23.5 26.504c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5 2.5-1.119 2.5-2.5c0-1.381-1.119-2.5-2.5-2.5zM14.5 26.504c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5 2.5-1.119 2.5-2.5c0-1.381-1.119-2.5-2.5-2.5z">
-                            </path>
-                          </svg>
-                        </button>
-                        <button
-                          class="hover:bg-red-50 transition-all border-2 text-red-500 text-center w-[244px] p-[4px] rounded-md border-red-500">
-                          В рассрочку
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-
-              <!--bowqa a href-->
+                <button
+                  id="addToCartBtn"
+                  class="bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition"
+                >
+                  Korzinkaga qo‘shish
+                </button>
+              </div>
             </div>
+          </div>
+        </div>
+        <div
+          id="successModal"
+          class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[60]"
+        >
+          <div class="bg-white rounded-2xl p-8 text-center w-[360px] relative">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/742/742751.png"
+              class="w-24 mx-auto mb-4"
+              alt="success"
+            />
+
+            <h2 class="text-xl font-bold mb-2">✅ Muvaffaqiyatli!</h2>
+            <p class="text-gray-600 mb-6">Tovar korzinkaga qo‘shildi</p>
+
+            <button
+              id="closeSuccessModal"
+              class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition"
+            >
+              OK
+            </button>
           </div>
         </div>
       </section>
-    </div>
-    <!-- abdulloh abu70ni tugashi -->
-  </main>
+      <div class="PakimonJonka p-10 bg-gray-200">
+        <section class="container mx-auto w-[85%]">
+          <div class="container max-w-7xl mx-auto">
+            <div class="flex flex-col gap-[10px]">
+              <div class="flex justify-between">
+                <div>
+                  <h3 class="text-[32px] font-semibold">Техника Apple</h3>
+                </div>
+                <div class="flex items-center">
+                  <a class="text-[13px] text-red-600" href="">Посмотреть все</a>
+                  <img
+                    class="w-[20px]"
+                    src="./pakimon`sImgs/right (2).png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="flex gap-[20px]">
+                <a href="">
+                  <div
+                    class="w-[344px] flex flex-col gap-[20px] relative bg-white rounded-lg px-[20px]"
+                  >
+                    <div class="">
+                      <img
+                        class="h-[280px] w-full"
+                        src="https://olcha.uz/image/220x220/products/oeOsArYZhSFQeIFhNzxJpcrKS6IIfgYx8UAor7Qk51Y9xjkUY3t8zJdu29ve.jpg"
+                        alt=""
+                      />
+                      <button class="btnHeart">
+                        <svg
+                          class="w-[30px] h-[30px] p-[5px] absolute top-[20px] right-[20px] rounded-full bg-white"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.96173 18.9109L9.42605 18.3219L8.96173 18.9109ZM12 5.50063L11.4596 6.02073C11.601 6.16763 11.7961 6.25063 12 6.25063C12.2039 6.25063 12.399 6.16763 12.5404 6.02073L12 5.50063ZM15.0383 18.9109L15.5026 19.4999L15.0383 18.9109ZM9.42605 18.3219C7.91039 17.1271 6.25307 15.9603 4.93829 14.4798C3.64922 13.0282 2.75 11.3345 2.75 9.1371H1.25C1.25 11.8026 2.3605 13.8361 3.81672 15.4758C5.24723 17.0866 7.07077 18.3752 8.49742 19.4999L9.42605 18.3219ZM2.75 9.1371C2.75 6.98623 3.96537 5.18252 5.62436 4.42419C7.23607 3.68748 9.40166 3.88258 11.4596 6.02073L12.5404 4.98053C10.0985 2.44352 7.26409 2.02539 5.00076 3.05996C2.78471 4.07292 1.25 6.42503 1.25 9.1371H2.75ZM8.49742 19.4999C9.00965 19.9037 9.55954 20.3343 10.1168 20.6599C10.6739 20.9854 11.3096 21.25 12 21.25V19.75C11.6904 19.75 11.3261 19.6293 10.8736 19.3648C10.4213 19.1005 9.95208 18.7366 9.42605 18.3219L8.49742 19.4999ZM15.5026 19.4999C16.9292 18.3752 18.7528 17.0866 20.1833 15.4758C21.6395 13.8361 22.75 11.8026 22.75 9.1371H21.25C21.25 11.3345 20.3508 13.0282 19.0617 14.4798C17.7469 15.9603 16.0896 17.1271 14.574 18.3219L15.5026 19.4999ZM22.75 9.1371C22.75 6.42503 21.2153 4.07292 18.9992 3.05996C16.7359 2.02539 13.9015 2.44352 11.4596 4.98053L12.5404 6.02073C14.5983 3.88258 16.7639 3.68748 18.3756 4.42419C20.0346 5.18252 21.25 6.98623 21.25 9.1371H22.75ZM14.574 18.3219C14.0479 18.7366 13.5787 19.1005 13.1264 19.3648C12.6739 19.6293 12.3096 19.75 12 19.75V21.25C12.6904 21.25 13.3261 20.9854 13.8832 20.6599C14.4405 20.3343 14.9903 19.9037 15.5026 19.4999L14.574 18.3219Z"
+                            fill="#808080"
+                          />
+                        </svg>
+                      </button>
+                      <button class="btnStatic">
+                        <svg
+                          class="w-[30px] absolute p-[5px] top-[60px] rotate-90 right-[20px] h-[30px]"
+                          width="800px"
+                          height="800px"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                        >
+                          <path
+                            fill="#808080"
+                            fill-rule="evenodd"
+                            d="M18 5a1 1 0 100-2H2a1 1 0 000 2h16zm0 4a1 1 0 100-2h-8a1 1 0 100 2h8zm1 3a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 5a1 1 0 100-2h-8a1 1 0 100 2h8z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="flex flex-col gap-[5px] pb-[40px]">
+                      <p>Apple Magic mouse 3</p>
+                      <h2 class="text-[18px] font-semibold pt-[10px]">
+                        1 389 951 сум
+                      </h2>
+                      <p
+                        class="px-[3px] py-[2px] rounded-md w-[50%] bg-yellow-400 text-[14px]"
+                      >
+                        163 000 сум x 12 мес
+                      </p>
+                    </div>
+                    <div class="flex gap-[10px] items-center">
+                      <button
+                        class="korzinkaBtn w-[36px] h-[35px] border-[2px] rounded-md flex justify-center items-center border-black"
+                      >
+                        <svg
+                          class="w-[20px]"
+                          fill="#000000"
+                          viewBox="0 0 32 32"
+                          version="1.1"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M31.739 8.875c-0.186-0.264-0.489-0.422-0.812-0.422h-21.223l-1.607-5.54c-0.63-2.182-2.127-2.417-2.741-2.417h-4.284c-0.549 0-0.993 0.445-0.993 0.993s0.445 0.993 0.993 0.993h4.283c0.136 0 0.549 0 0.831 0.974l5.527 20.311c0.12 0.428 0.511 0.724 0.956 0.724h13.499c0.419 0 0.793-0.262 0.934-0.657l4.758-14.053c0.11-0.304 0.064-0.643-0.122-0.907zM25.47 22.506h-12.046l-3.161-12.066h19.253zM23.5 26.504c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5 2.5-1.119 2.5-2.5c0-1.381-1.119-2.5-2.5-2.5zM14.5 26.504c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5 2.5-1.119 2.5-2.5c0-1.381-1.119-2.5-2.5-2.5z"
+                          ></path>
+                        </svg>
+                      </button>
+                      <button
+                        class="hover:bg-red-50 transition-all border-2 text-red-500 text-center w-[244px] p-[4px] rounded-md border-red-500"
+                      >
+                        В рассрочку
+                      </button>
+                    </div>
+                  </div>
+                </a>
 
-  <section class="bg-gray-100 py-14">
-    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
-      <div>
-        <h2 class="text-2xl font-semibold mb-6 ml-[240px]">
-          Bizning mobil ilovamiz AppGallery, App
-          <br />
-          store va Google play-da
-        </h2>
+                <!-- bowqa img qatori -->
+                <a href="">
+                  <div class="flex w-full h-[275px] gap-4">
+                    <iframe
+                      class="rounded-lg"
+                      width="450"
+                      height="276"
+                      src="https://www.youtube.com/embed/SH3lR2GLgT0?si=jrzO_tjV44DSGU5H"
+                      title="YouTube video player"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen
+                    ></iframe>
+
+                    <div
+                      class="w-[450px] flex gap-[20px] items-center justify-center relative bg-white rounded-lg px-[20px]"
+                    >
+                      <div class="">
+                        <img
+                          class="w-[195px]"
+                          src="https://olcha.uz/image/220x220/products/supplier/stores/1/2023-05-20/N6u7M5ch87s5PkARnrTiwVeEo87y5hoxmsuCIBhlP2yAJr7QQ1Huse3gPffx.jpg"
+                          alt=""
+                        />
+                        <button class="btnHeart">
+                          <svg
+                            class="w-[30px] h-[30px] p-[5px] absolute top-[20px] right-[20px] rounded-full bg-white"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8.96173 18.9109L9.42605 18.3219L8.96173 18.9109ZM12 5.50063L11.4596 6.02073C11.601 6.16763 11.7961 6.25063 12 6.25063C12.2039 6.25063 12.399 6.16763 12.5404 6.02073L12 5.50063ZM15.0383 18.9109L15.5026 19.4999L15.0383 18.9109ZM9.42605 18.3219C7.91039 17.1271 6.25307 15.9603 4.93829 14.4798C3.64922 13.0282 2.75 11.3345 2.75 9.1371H1.25C1.25 11.8026 2.3605 13.8361 3.81672 15.4758C5.24723 17.0866 7.07077 18.3752 8.49742 19.4999L9.42605 18.3219ZM2.75 9.1371C2.75 6.98623 3.96537 5.18252 5.62436 4.42419C7.23607 3.68748 9.40166 3.88258 11.4596 6.02073L12.5404 4.98053C10.0985 2.44352 7.26409 2.02539 5.00076 3.05996C2.78471 4.07292 1.25 6.42503 1.25 9.1371H2.75ZM8.49742 19.4999C9.00965 19.9037 9.55954 20.3343 10.1168 20.6599C10.6739 20.9854 11.3096 21.25 12 21.25V19.75C11.6904 19.75 11.3261 19.6293 10.8736 19.3648C10.4213 19.1005 9.95208 18.7366 9.42605 18.3219L8.49742 19.4999ZM15.5026 19.4999C16.9292 18.3752 18.7528 17.0866 20.1833 15.4758C21.6395 13.8361 22.75 11.8026 22.75 9.1371H21.25C21.25 11.3345 20.3508 13.0282 19.0617 14.4798C17.7469 15.9603 16.0896 17.1271 14.574 18.3219L15.5026 19.4999ZM22.75 9.1371C22.75 6.42503 21.2153 4.07292 18.9992 3.05996C16.7359 2.02539 13.9015 2.44352 11.4596 4.98053L12.5404 6.02073C14.5983 3.88258 16.7639 3.68748 18.3756 4.42419C20.0346 5.18252 21.25 6.98623 21.25 9.1371H22.75ZM14.574 18.3219C14.0479 18.7366 13.5787 19.1005 13.1264 19.3648C12.6739 19.6293 12.3096 19.75 12 19.75V21.25C12.6904 21.25 13.3261 20.9854 13.8832 20.6599C14.4405 20.3343 14.9903 19.9037 15.5026 19.4999L14.574 18.3219Z"
+                              fill="#808080"
+                            />
+                          </svg>
+                        </button>
+                        <button class="btnStatic">
+                          <svg
+                            class="w-[30px] absolute p-[5px] top-[60px] rotate-90 right-[20px] h-[30px]"
+                            width="800px"
+                            height="800px"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                          >
+                            <path
+                              fill="#808080"
+                              fill-rule="evenodd"
+                              d="M18 5a1 1 0 100-2H2a1 1 0 000 2h16zm0 4a1 1 0 100-2h-8a1 1 0 100 2h8zm1 3a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 5a1 1 0 100-2h-8a1 1 0 100 2h8z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="flex flex-col gap-2">
+                        <div class="flex flex-col justify-center gap-[3px]">
+                          <p class="w-[280px]">
+                            Magic Keyboard Russian 12.9-inch 2021 Белый
+                          </p>
+                          <h2 class="text-[18px] font-semibold">
+                            1 389 951 сум
+                          </h2>
+                          <p
+                            class="px-[3px] py-[2px] rounded-md w-[50%] bg-yellow-400 text-[14px]"
+                          >
+                            163 000 сум x 12 мес
+                          </p>
+                        </div>
+                        <div class="flex gap-[10px] items-center">
+                          <button
+                            class="korzinkaBtn w-[36px] h-[35px] border-[2px] rounded-md flex justify-center items-center border-black"
+                          >
+                            <svg
+                              class="w-[20px]"
+                              fill="#000000"
+                              viewBox="0 0 32 32"
+                              version="1.1"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M31.739 8.875c-0.186-0.264-0.489-0.422-0.812-0.422h-21.223l-1.607-5.54c-0.63-2.182-2.127-2.417-2.741-2.417h-4.284c-0.549 0-0.993 0.445-0.993 0.993s0.445 0.993 0.993 0.993h4.283c0.136 0 0.549 0 0.831 0.974l5.527 20.311c0.12 0.428 0.511 0.724 0.956 0.724h13.499c0.419 0 0.793-0.262 0.934-0.657l4.758-14.053c0.11-0.304 0.064-0.643-0.122-0.907zM25.47 22.506h-12.046l-3.161-12.066h19.253zM23.5 26.504c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5 2.5-1.119 2.5-2.5c0-1.381-1.119-2.5-2.5-2.5zM14.5 26.504c-1.381 0-2.5 1.119-2.5 2.5s1.119 2.5 2.5 2.5 2.5-1.119 2.5-2.5c0-1.381-1.119-2.5-2.5-2.5z"
+                              ></path>
+                            </svg>
+                          </button>
+                          <button
+                            class="hover:bg-red-50 transition-all border-2 text-red-500 text-center w-[244px] p-[4px] rounded-md border-red-500"
+                          >
+                            В рассрочку
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <!--bowqa a href-->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- abdulloh abu70ni tugashi -->
+    </main>
+
+    <section class="bg-gray-100 py-14">
+      <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
         <div>
-          <div class="w-[170px] h-[48px] rounded-[5px] bg-[#fffff]"></div>
-          <div></div>
+          <h2 class="text-2xl font-semibold mb-6 ml-[240px]">
+            Bizning mobil ilovamiz AppGallery, App
+            <br />
+            store va Google play-da
+          </h2>
+          <div>
+            <div class="w-[170px] h-[48px] rounded-[5px] bg-[#fffff]"></div>
+            <div></div>
+          </div>
+          <div class="flex gap-4"></div>
         </div>
-        <div class="flex gap-4"></div>
       </div>
-    </div>
-  </section>
+    </section>
     <section class="max-w-7xl mx-auto px-4">
-    <!-- Title -->
-    <div class="flex items-center justify-between mb-6">
-      <h2 class="text-2xl font-semibold">Бренды</h2>
-      <a href="#" class="text-red-500 text-sm hover:underline">
-        Посмотреть все →
-      </a>
-    </div>
-
-    <!-- Brands grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- CARD -->
-      <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
-        <!-- header -->
-        <div class="flex items-center justify-between mb-5">
-          <img class="w-8" src="https://www.svgrepo.com/show/511330/apple-173.svg" alt="Apple">
-          <a href="#" class="text-red-500 text-xs font-medium hover:underline">
-            ВСЕ ТОВАРЫ →
-          </a>
-        </div>
-
-        <!-- products -->
-        <div class="grid grid-cols-3 gap-4 text-center">
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/HNa7cUNc3ZmusOifaui3ILWGymcH1dQiFqkaKJzagTlqcOUgCs6Q3yr3pwis.png">
-            <p class="text-xs text-gray-600">Акустика</p>
-          </div>
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/VHfLdXIi8WVvhYGxrhdQUVpA2N11hgJEcA4C8uf4sSk4EejpDg1Qhx2lslTF.png">
-            <p class="text-xs text-gray-600">Медиаплееры</p>
-          </div>
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/4rZuiDyns6OagIpAvvAsKvSSO2ljbZOcch1r1yhs5CW9uDmWgKdXg5NoaqSX.png">
-            <p class="text-xs text-gray-600">Очки VR</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- SAMSUNG -->
-      <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
-        <div class="flex items-center justify-between mb-5">
-          <img class="h-6" src="https://olcha.uz/uploads/images/manufacturer/KK/KK/Ko/1667553735.png">
-          <a class="text-red-500 text-xs font-medium hover:underline">ВСЕ ТОВАРЫ →</a>
-        </div>
-        <div class="grid grid-cols-3 gap-4 text-center">
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/FIsAVytQy3Up6SRiF65N82VE6xgDZJTQj4kgxx60ad9MSnnEEhVKa1KykdkY.png">
-            <p class="text-xs text-gray-600">Телевизоры</p>
-          </div>
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/Zzb97hGmwgC8EpGI3uVEwgdtvf4k9Wx404mtejcvF2qvbTSIA6HMben2CDJL.png">
-            <p class="text-xs text-gray-600">Мониторы</p>
-          </div>
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/b9ndmxu7R1o0rNIfa66oTO5C8yGLz0rqSKPVIgsNOXf11pmxhJkp7zTOCZet.png">
-            <p class="text-xs text-gray-600">SSD</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- SONY -->
-      <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
-        <div class="flex items-center justify-between mb-5">
-          <img class="h-6" src="https://olcha.uz/uploads/images/manufacturer/KK/KK/Kd/1646038705.jpg">
-          <a class="text-red-500 text-xs font-medium hover:underline">ВСЕ ТОВАРЫ →</a>
-        </div>
-        <div class="grid grid-cols-3 gap-4 text-center">
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/FIsAVytQy3Up6SRiF65N82VE6xgDZJTQj4kgxx60ad9MSnnEEhVKa1KykdkY.png">
-            <p class="text-xs text-gray-600">Телевизоры</p>
-          </div>
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/SCaz0uerg7WUKCf6e1ezZ67Tw7OzYMliaAs8QTbPjn9E0R2mmyWyEIC1ErhQ.png">
-            <p class="text-xs text-gray-600">Музыка</p>
-          </div>
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/HNa7cUNc3ZmusOifaui3ILWGymcH1dQiFqkaKJzagTlqcOUgCs6Q3yr3pwis.png">
-            <p class="text-xs text-gray-600">Акустика</p>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-
-
-      <!-- SONY -->
-      <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
-        <div class="flex items-center justify-between mb-5">
-          <img class="h-6" src="https://olcha.uz/uploads/images/manufacturer/KK/KK/Ka/1664348028.png">
-          <a class="text-red-500 text-xs font-medium hover:underline">ВСЕ ТОВАРЫ →</a>
-        </div>
-        <div class="grid grid-cols-3 gap-4 text-center">
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/VZnCHXlHhCMJNL8KChM7IuLCg2tLaa5g1TkEvHFxjSRz3npBWIP3qi6vjtxl.png">
-            <p class="text-xs text-gray-600">Парфюмерия для женщин</p>
-          </div>
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/IGFNO9wFic9eoNI6OOV2lxWe7cQ4njGQxfrzpRfaoP3XJoPtKGKQ9UObVsIB.png">
-            <p class="text-xs text-gray-600">Парфюмерия для мужчин</p>
-          </div>
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/Kvm31gfqeBO4hF3lKs6osqKTir32S4myM6xY986G9ruwptEedash0T8V2wMO.png">
-            <p class="text-xs text-gray-600">Наборы парфюмерии</p>
-          </div>
-        </div>
-      </div>
-
-
-
-      <!-- SONY -->
-      <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
-        <div class="flex items-center justify-between mb-5">
-          <img class="h-6" src="https://olcha.uz/uploads/images/manufacturer/KK/KK/Kp/1646038892.jpg">
-          <a class="text-red-500 text-xs font-medium hover:underline">ВСЕ ТОВАРЫ →</a>
-        </div>
-        <div class="grid grid-cols-3 gap-4 text-center">
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/FIsAVytQy3Up6SRiF65N82VE6xgDZJTQj4kgxx60ad9MSnnEEhVKa1KykdkY.png">
-            <p class="text-xs text-gray-600">Телевизоры</p>
-          </div>
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/SCaz0uerg7WUKCf6e1ezZ67Tw7OzYMliaAs8QTbPjn9E0R2mmyWyEIC1ErhQ.png">
-            <p class="text-xs text-gray-600">Музыка</p>
-          </div>
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/HNa7cUNc3ZmusOifaui3ILWGymcH1dQiFqkaKJzagTlqcOUgCs6Q3yr3pwis.png">
-            <p class="text-xs text-gray-600">Акустика</p>
-          </div>
-        </div>
-      </div>
-
-
-
-
-      <!-- SONY -->
-      <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
-        <div class="flex items-center justify-between mb-5">
-          <img class="h-6" src="https://olcha.uz/uploads/images/manufacturer/KK/KK/KB/1646038994.jpg">
-          <a class="text-red-500 text-xs font-medium hover:underline">ВСЕ ТОВАРЫ →</a>
-        </div>
-        <div class="grid grid-cols-3 gap-4 text-center">
-          <div>
-            <img class="mx-auto w-20 mb-2 "
-              src="https://olcha.uz/image/128x128/category/FIsAVytQy3Up6SRiF65N82VE6xgDZJTQj4kgxx60ad9MSnnEEhVKa1KykdkY.png">
-            <p class="text-xs text-gray-600">Телевизоры</p>
-          </div>
-          <div>
-            <img class="mx-auto w-20 mb-2"
-              src="https://olcha.uz/image/128x128/category/b9ndmxu7R1o0rNIfa66oTO5C8yGLz0rqSKPVIgsNOXf11pmxhJkp7zTOCZet.png">
-            <p class="text-xs text-gray-600">Мониторы</p>
-          </div>
-          <div><img loading="lazy" width="128" height="128" src="https://olcha.uz/image/128x128/category/"
-              alt="Стиральные машины" title="Стиральные машины">
-            <p class="text-xs text-gray-600">Стиральные машины</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <footer class="border-t">
-    <div class="max-w-7xl mx-auto px-4 py-14 grid grid-cols-4 gap-10">
-      <div>
-        <a href="">
-          <h2 class="text-3xl font-bold text-red-600 mb-6">olcha</h2>
-        </a>
-        <a href="">
-          <p class="font-semibold mb-3">Qo‘llab-quvvatlash raqami</p>
-        </a>
-        <a href="">
-          <p class="text-lg font-bold mb-4">+998 (71) 202 202 1</p>
-        </a>
-        <a href="">
-          <p class="flex items-center gap-2 text-gray-600 mb-2">
-            📍 Qozitarnov, Toshkent
-          </p>
-        </a>
-        <a href="">
-          <p class="flex items-center gap-2 text-gray-600">
-            ✉️ info@olcha.uz
-          </p>
+      <!-- Title -->
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-semibold">Бренды</h2>
+        <a href="#" class="text-red-500 text-sm hover:underline">
+          Посмотреть все →
         </a>
       </div>
-      <div>
-        <h3 class="text-xl font-semibold text-red-600 mb-5">Ma'lumot</h3>
-        <ul class="space-y-3 text-gray-700">
-          <a href="">
-            <li>Biz haqimizda</li>
-          </a>
-          <a href="">
-            <li>Bo‘sh ish o‘rinlari</li>
-          </a>
-          <a href="">
-            <li>Ommaviy oferta</li>
-          </a>
-          <a href="">
-            <li>To‘lovni qaytarish va tovarlarni almashtirish</li>
-          </a>
-          <a href="">
-            <li>Muddatli to‘lov shartlari</li>
-          </a>
-        </ul>
+
+      <!-- Brands grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- CARD -->
+        <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
+          <!-- header -->
+          <div class="flex items-center justify-between mb-5">
+            <img
+              class="w-8"
+              src="https://www.svgrepo.com/show/511330/apple-173.svg"
+              alt="Apple"
+            />
+            <a
+              href="#"
+              class="text-red-500 text-xs font-medium hover:underline"
+            >
+              ВСЕ ТОВАРЫ →
+            </a>
+          </div>
+
+          <!-- products -->
+          <div class="grid grid-cols-3 gap-4 text-center">
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/HNa7cUNc3ZmusOifaui3ILWGymcH1dQiFqkaKJzagTlqcOUgCs6Q3yr3pwis.png"
+              />
+              <p class="text-xs text-gray-600">Акустика</p>
+            </div>
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/VHfLdXIi8WVvhYGxrhdQUVpA2N11hgJEcA4C8uf4sSk4EejpDg1Qhx2lslTF.png"
+              />
+              <p class="text-xs text-gray-600">Медиаплееры</p>
+            </div>
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/4rZuiDyns6OagIpAvvAsKvSSO2ljbZOcch1r1yhs5CW9uDmWgKdXg5NoaqSX.png"
+              />
+              <p class="text-xs text-gray-600">Очки VR</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SAMSUNG -->
+        <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
+          <div class="flex items-center justify-between mb-5">
+            <img
+              class="h-6"
+              src="https://olcha.uz/uploads/images/manufacturer/KK/KK/Ko/1667553735.png"
+            />
+            <a class="text-red-500 text-xs font-medium hover:underline"
+              >ВСЕ ТОВАРЫ →</a
+            >
+          </div>
+          <div class="grid grid-cols-3 gap-4 text-center">
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/FIsAVytQy3Up6SRiF65N82VE6xgDZJTQj4kgxx60ad9MSnnEEhVKa1KykdkY.png"
+              />
+              <p class="text-xs text-gray-600">Телевизоры</p>
+            </div>
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/Zzb97hGmwgC8EpGI3uVEwgdtvf4k9Wx404mtejcvF2qvbTSIA6HMben2CDJL.png"
+              />
+              <p class="text-xs text-gray-600">Мониторы</p>
+            </div>
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/b9ndmxu7R1o0rNIfa66oTO5C8yGLz0rqSKPVIgsNOXf11pmxhJkp7zTOCZet.png"
+              />
+              <p class="text-xs text-gray-600">SSD</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SONY -->
+        <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
+          <div class="flex items-center justify-between mb-5">
+            <img
+              class="h-6"
+              src="https://olcha.uz/uploads/images/manufacturer/KK/KK/Kd/1646038705.jpg"
+            />
+            <a class="text-red-500 text-xs font-medium hover:underline"
+              >ВСЕ ТОВАРЫ →</a
+            >
+          </div>
+          <div class="grid grid-cols-3 gap-4 text-center">
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/FIsAVytQy3Up6SRiF65N82VE6xgDZJTQj4kgxx60ad9MSnnEEhVKa1KykdkY.png"
+              />
+              <p class="text-xs text-gray-600">Телевизоры</p>
+            </div>
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/SCaz0uerg7WUKCf6e1ezZ67Tw7OzYMliaAs8QTbPjn9E0R2mmyWyEIC1ErhQ.png"
+              />
+              <p class="text-xs text-gray-600">Музыка</p>
+            </div>
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/HNa7cUNc3ZmusOifaui3ILWGymcH1dQiFqkaKJzagTlqcOUgCs6Q3yr3pwis.png"
+              />
+              <p class="text-xs text-gray-600">Акустика</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SONY -->
+        <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
+          <div class="flex items-center justify-between mb-5">
+            <img
+              class="h-6"
+              src="https://olcha.uz/uploads/images/manufacturer/KK/KK/Ka/1664348028.png"
+            />
+            <a class="text-red-500 text-xs font-medium hover:underline"
+              >ВСЕ ТОВАРЫ →</a
+            >
+          </div>
+          <div class="grid grid-cols-3 gap-4 text-center">
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/VZnCHXlHhCMJNL8KChM7IuLCg2tLaa5g1TkEvHFxjSRz3npBWIP3qi6vjtxl.png"
+              />
+              <p class="text-xs text-gray-600">Парфюмерия для женщин</p>
+            </div>
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/IGFNO9wFic9eoNI6OOV2lxWe7cQ4njGQxfrzpRfaoP3XJoPtKGKQ9UObVsIB.png"
+              />
+              <p class="text-xs text-gray-600">Парфюмерия для мужчин</p>
+            </div>
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/Kvm31gfqeBO4hF3lKs6osqKTir32S4myM6xY986G9ruwptEedash0T8V2wMO.png"
+              />
+              <p class="text-xs text-gray-600">Наборы парфюмерии</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SONY -->
+        <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
+          <div class="flex items-center justify-between mb-5">
+            <img
+              class="h-6"
+              src="https://olcha.uz/uploads/images/manufacturer/KK/KK/Kp/1646038892.jpg"
+            />
+            <a class="text-red-500 text-xs font-medium hover:underline"
+              >ВСЕ ТОВАРЫ →</a
+            >
+          </div>
+          <div class="grid grid-cols-3 gap-4 text-center">
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/FIsAVytQy3Up6SRiF65N82VE6xgDZJTQj4kgxx60ad9MSnnEEhVKa1KykdkY.png"
+              />
+              <p class="text-xs text-gray-600">Телевизоры</p>
+            </div>
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/SCaz0uerg7WUKCf6e1ezZ67Tw7OzYMliaAs8QTbPjn9E0R2mmyWyEIC1ErhQ.png"
+              />
+              <p class="text-xs text-gray-600">Музыка</p>
+            </div>
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/HNa7cUNc3ZmusOifaui3ILWGymcH1dQiFqkaKJzagTlqcOUgCs6Q3yr3pwis.png"
+              />
+              <p class="text-xs text-gray-600">Акустика</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SONY -->
+        <div class="bg-white rounded-xl p-5 shadow hover:shadow-lg transition">
+          <div class="flex items-center justify-between mb-5">
+            <img
+              class="h-6"
+              src="https://olcha.uz/uploads/images/manufacturer/KK/KK/KB/1646038994.jpg"
+            />
+            <a class="text-red-500 text-xs font-medium hover:underline"
+              >ВСЕ ТОВАРЫ →</a
+            >
+          </div>
+          <div class="grid grid-cols-3 gap-4 text-center">
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/FIsAVytQy3Up6SRiF65N82VE6xgDZJTQj4kgxx60ad9MSnnEEhVKa1KykdkY.png"
+              />
+              <p class="text-xs text-gray-600">Телевизоры</p>
+            </div>
+            <div>
+              <img
+                class="mx-auto w-20 mb-2"
+                src="https://olcha.uz/image/128x128/category/b9ndmxu7R1o0rNIfa66oTO5C8yGLz0rqSKPVIgsNOXf11pmxhJkp7zTOCZet.png"
+              />
+              <p class="text-xs text-gray-600">Мониторы</p>
+            </div>
+            <div>
+              <img
+                loading="lazy"
+                width="128"
+                height="128"
+                src="https://olcha.uz/image/128x128/category/"
+                alt="Стиральные машины"
+                title="Стиральные машины"
+              />
+              <p class="text-xs text-gray-600">Стиральные машины</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="pt-10">
-        <ul class="space-y-3 text-gray-700">
+    </section>
+    <footer class="border-t">
+      <div class="max-w-7xl mx-auto px-4 py-14 grid grid-cols-4 gap-10">
+        <div>
           <a href="">
-            <li>Eco-friendly</li>
+            <h2 class="text-3xl font-bold text-red-600 mb-6">olcha</h2>
           </a>
           <a href="">
-            <li>Shaxsiy ma'lumotlar bilan ishlash siyosati</li>
+            <p class="font-semibold mb-3">Qo‘llab-quvvatlash raqami</p>
           </a>
           <a href="">
-            <li>To‘lov va yetkazib berish</li>
+            <p class="text-lg font-bold mb-4">+998 (71) 202 202 1</p>
           </a>
           <a href="">
-            <li>Bonus va aksiyalar</li>
+            <p class="flex items-center gap-2 text-gray-600 mb-2">
+              📍 Qozitarnov, Toshkent
+            </p>
           </a>
           <a href="">
-            <li>
-              Mahsulotlarni Olcha.uz da sotmoqchi bo‘lgan sotuvchilar uchun
-              oferta
-            </li>
+            <p class="flex items-center gap-2 text-gray-600">
+              ✉️ info@olcha.uz
+            </p>
           </a>
-        </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-red-600 mb-5">Ma'lumot</h3>
+          <ul class="space-y-3 text-gray-700">
+            <a href="">
+              <li>Biz haqimizda</li>
+            </a>
+            <a href="">
+              <li>Bo‘sh ish o‘rinlari</li>
+            </a>
+            <a href="">
+              <li>Ommaviy oferta</li>
+            </a>
+            <a href="">
+              <li>To‘lovni qaytarish va tovarlarni almashtirish</li>
+            </a>
+            <a href="">
+              <li>Muddatli to‘lov shartlari</li>
+            </a>
+          </ul>
+        </div>
+        <div class="pt-10">
+          <ul class="space-y-3 text-gray-700">
+            <a href="">
+              <li>Eco-friendly</li>
+            </a>
+            <a href="">
+              <li>Shaxsiy ma'lumotlar bilan ishlash siyosati</li>
+            </a>
+            <a href="">
+              <li>To‘lov va yetkazib berish</li>
+            </a>
+            <a href="">
+              <li>Bonus va aksiyalar</li>
+            </a>
+            <a href="">
+              <li>
+                Mahsulotlarni Olcha.uz da sotmoqchi bo‘lgan sotuvchilar uchun
+                oferta
+              </li>
+            </a>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="border-t py-4">
-      <div class="max-w-7xl mx-auto px-4 flex gap-[150px] text-sm text-gray-500">
-        <a href="">
-          <p>© 2017–2026. OOO "Olcha store"</p>
-        </a>
-        <a href="">
-          <p>Ommaviy oferta</p>
-        </a>
-        <a href="">
-          <p>Maxfiylik siyosati</p>
-        </a>
+      <div class="border-t py-4">
+        <div
+          class="max-w-7xl mx-auto px-4 flex gap-[150px] text-sm text-gray-500"
+        >
+          <a href="">
+            <p>© 2017–2026. OOO "Olcha store"</p>
+          </a>
+          <a href="">
+            <p>Ommaviy oferta</p>
+          </a>
+          <a href="">
+            <p>Maxfiylik siyosati</p>
+          </a>
+        </div>
       </div>
-    </div>
-  </footer>
-
-
-
-
-
-
-  <script src="./main.js"></script>
-</body>
-
+    </footer>
+    <script src="./main.js"></script>
+  </body>
 </html>
