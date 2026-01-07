@@ -16,6 +16,8 @@ function createSnowflake() {
 }
 
 // qor tezligi
+
+
 setInterval(createSnowflake, 200);
 
 const phonesEl = document.getElementById("phones");
@@ -78,6 +80,8 @@ function createCard(item, index, categoryName) {
   </div>
   `;
 }
+
+
 
 function renderCards(el, list, categoryName) {
   el.innerHTML = "";
