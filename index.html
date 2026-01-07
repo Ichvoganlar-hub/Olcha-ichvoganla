@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
   <title>Olcha.uz</title>
 </head>
@@ -64,7 +66,7 @@
       </div>
     </nav>
 
-    <nav class="mt-8 max-w-7xl mx-auto px-4">
+    <nav class=" max-w-7xl mx-auto px-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-[20px]">
           <a href="./index.html">
@@ -92,7 +94,8 @@
 
           <a href="./sevimlilar.html" class="flex flex-col items-center gap-1">
             <img class="w-[22px] h-[22px]" src="./img.imoil/heart-svgrepo-com.svg" alt="" />
-            <span>Sevimlilar</span>
+            <span>Sevimlilar</span><span id="sevnisoni"
+              class="w-[15px] h-[15px] bg-red-600 text-white text-center rounded-[50%] relative bottom-[50px] left-3">0</span>
           </a>
 
           <a href="./korzinka.html" class="flex flex-col items-center gap-1">
@@ -107,6 +110,108 @@
         </div>
       </div>
     </nav>
+    <!-- abu70niswiperlarini boshlanishi -->
+    <nav>
+
+      <div class="max-w-7xl mx-auto p-4 flex justify-around items-center gap-4">
+        <div class="relative w-full flex justify-center py-6">
+
+          <div class="relative w-[900px]">
+
+            <div class="swiper simpleSwiper">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <img
+                    src="https://olcha.uz/image/original/sliders/ru/cdn_1/2025-12-18/cEHdOebUGwqthAmCDuFczh1tUlyEsqV0LotVNtwjaNIUEOxWTHK3ShaVnmqX.jpg"
+                    class="w-full h-[400px] object-cover rounded-xl">
+                </div>
+
+                <div class="swiper-slide">
+                  <img
+                    src="https://olcha.uz/image/original/sliders/ru/cdn_1/2025-12-18/oNNjhDUhfuKVxH7vYiOy9gR5bIGN6sNPdK7rzRTM6MyvmqZIIGhg1Cn72nbr.jpg"
+                    class="w-full h-[400px] object-cover rounded-xl">
+                </div>
+
+                <div class="swiper-slide">
+                  <img
+                    src="https://olcha.uz/image/original/sliders/ru/cdn_1/2025-12-25/lIjzFI0MqSMmLXzDMBLsINkcCsW4HhKHzhaxZendZPBAeBs0NPeR2ZvgWdKc.jpg"
+                    class="w-full h-[400px] object-cover rounded-xl">
+                </div>
+
+                <div class="swiper-slide">
+                  <img
+                    src="https://olcha.uz/image/original/sliders/ru/cdn_1/2025-12-16/VXMBHR5yjB7YIaHJUxncRp3J95jrz1grPaXf8gbiBcUeWJZQBPhf1iKeBmCN.jpg"
+                    class="w-full h-[400px] object-cover rounded-xl">
+                </div>
+
+                <div class="swiper-slide">
+                  <img
+                    src="https://olcha.uz/image/original/sliders/ru/cdn_1/2025-12-18/UrNQWKtTPBRsLAfk6zpIk33lHLUecLc3LTDelRO0YHV4KbDew1D2mtgfoOMV.jpg"
+                    class="w-full h-[400px] object-cover rounded-xl">
+                </div>
+
+                <div class="swiper-slide">
+                  <img
+                    src="https://olcha.uz/image/original/sliders/ru/cdn_1/2025-12-18/X1BdyAedZfOzyXip2u8u0FfspT6ZQzS3Arif7TsRmt6T2NbK2PEZR3B8KBa5.png"
+                    class="w-full h-[400px] object-cover rounded-xl">
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="swiper-button-prev !text-red-600 bg-white rounded-[50%] w-[80px] h-[80px] text-center "></div>
+            <div class="swiper-button-next !text-red-600 bg-white rounded-[50%] w-[80px] h-[80px] text-center "></div>
+
+          </div>
+        </div>
+
+
+        <div class="w-[360px] h-[400px] bg-white border-[3px] border-red-600 rounded-2xl p-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-bold">Товар дня</h2>
+
+            <div class="flex gap-1">
+              <span class="min-w-[32px] text-center px-2 py-1 text-sm border border-gray-300 rounded-md"
+                data-count="100">10</span>
+              <span class="min-w-[32px] text-center px-2 py-1 text-sm border border-gray-300 rounded-md"
+                data-count="201">21</span>
+              <span class="min-w-[32px] text-center px-2 py-1 text-sm border border-gray-300 rounded-md"
+                data-count="500">50</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto py-6 relative">
+
+        <div class="swiper categorySwiper px-12">
+          <div id="categoryWrapper" class="swiper-wrapper">
+            <!-- JS orqali to‘ldiriladi -->
+          </div>
+        </div>
+
+        <div class="swiper-button-prev !text-red-600"></div>
+        <div class="swiper-button-next !text-red-600"></div>
+
+      </div>
+
+      <script>
+        new Swiper(".categorySwiper", {
+          slidesPerView: "auto",
+          spaceBetween: 24,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
+
+
+
+    </nav>
+    <!-- abu 70ni swiperlarini tugashi -->
   </header>
   <main>
     <!-- abdulloh abu70 -->
@@ -358,7 +463,7 @@
       </div>
     </div>
   </section>
-    <section class="max-w-7xl mx-auto px-4">
+  <section class="max-w-7xl mx-auto px-4">
     <!-- Title -->
     <div class="flex items-center justify-between mb-6">
       <h2 class="text-2xl font-semibold">Бренды</h2>
@@ -621,8 +726,8 @@
 
 
 
-
   <script src="./main.js"></script>
+  <script src="./sev.js"></script>
 </body>
 
 </html>

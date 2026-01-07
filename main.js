@@ -1,7 +1,7 @@
 function createSnowflake() {
   const snowflake = document.createElement("div");
   snowflake.className = "snowflake";
-  snowflake.innerHTML = "❄️";
+  snowflake.textContent = "❄️";
 
   snowflake.style.left = Math.random() * window.innerWidth + "px";
   snowflake.style.fontSize = Math.random() * 10 + 10 + "px";
@@ -9,195 +9,215 @@ function createSnowflake() {
   snowflake.style.animationDuration = Math.random() * 5 + 5 + "s";
 
   document.body.appendChild(snowflake);
-
-  setTimeout(() => {
-    snowflake.remove();
-  }, 10000);
+  setTimeout(() => snowflake.remove(), 10000);
 }
-
-// qor tezligi
 setInterval(createSnowflake, 200);
 
 const phonesEl = document.getElementById("phones");
-const reklama1 = document.getElementById("reklama1");
 const laptopsEl = document.getElementById("laptops");
-const reklama2 = document.getElementById("reklama2");
 const groceriesEl = document.getElementById("groceries");
 const beautyEl = document.getElementById("beauty");
-const reklama3 = document.getElementById("reklama3");
 const furnitureEl = document.getElementById("furniture");
+
+const reklama1 = document.getElementById("reklama1");
+const reklama2 = document.getElementById("reklama2");
+const reklama3 = document.getElementById("reklama3");
 const reklama4 = document.getElementById("reklama4");
 
-const modal = document.getElementById("productModal");
-const modalImg = document.getElementById("modalImg");
-const modalTitle = document.getElementById("modalTitle");
-const modalPrice = document.getElementById("modalPrice");
-const closeModal = document.getElementById("closeModal");
-
-const successModal = document.getElementById("successModal");
-const closeSuccessModal = document.getElementById("closeSuccessModal");
-
-const systemErrorModal = document.getElementById("systemErrorModal");
-
-let successTimer = null;
-
 async function fetchCategory(category, limit = null) {
-  const res = await fetch(`https://dummyjson.com/products/category/${category}`);
-  const data = await res.json();
-  return limit ? data.products.slice(0, limit) : data.products;
+  try {
+    const res = await fetch(`https://dummyjson.com/products/category/${category}`);
+    const data = await res.json();
+    return limit ? data.products.slice(0, limit) : data.products;
+  } catch (e) {
+    console.error(e);
+    return [];
+  }
 }
 
-function createCard(item, index, categoryName) {
-  const safeItem = encodeURIComponent(JSON.stringify(item));
 
-  return `
-  <div class="max-w-[20%] p-2 bg-white rounded-xl shadow-md flex flex-col gap-3 relative transition-transform duration-300 ease-out hover:scale-[1.05]">
-    <button class="heart-btn absolute top-3 right-3 w-[32px] h-[32px] rounded-full flex items-center justify-center shadow transition-transform duration-300 hover:scale-[1.05]" data-index="${categoryName}-${index}">
-      <svg class="heart-iconпше " viewBox="0 0 24 24">
-        <path d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
-      </svg>
-    </button>
+function renderCards(wrapper, products) {
+  wrapper.innerHTML = "";
 
-    <img src="${item.thumbnail}" alt="${item.title}" class="w-full h-[220px] object-contain transition-transform duration-300 hover:scale-105">
-    <p class="font-semibold text-sm">${item.title}</p>
-    <div>
-      <p class="font-bold text-lg">${item.price.toLocaleString()} so'm</p>
-      <p class="text-sm bg-yellow-400 w-[145px] h-[22px] text-center text-black font-medium rounded-md">
-        ${(item.price / 12).toFixed(0)} so'm x 12 oy
-      </p>
-    </div>
-    <div class="flex items-center gap-3 mt-2">
-    <button class="border border-black rounded-md p-2 bg-white text-black hover:bg-black hover:text-white hover:border-white transition duration-300 active:scale-95"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"> <circle cx="10.07" cy="20.59" r="1.91" /> <circle cx="18.66" cy="20.59" r="1.91" /> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10"/> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91"/> </svg> </button>
-      <button 
-        class="add-to-cart-btn flex-1 border border-red-600 text-red-600 font-medium py-2 rounded-md hover:bg-red-600 hover:text-white transition"
-        data-item="${safeItem}"
-      >
-        Korzinkaga
+  products.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.dataset.id = item.id;
+
+    card.innerHTML = `
+      <div class="p-2 bg-white rounded-xl shadow-md flex flex-col gap-3 relative">
+        <button class="heart-btn absolute top-3 right-3 w-[32px] h-[32px] rounded-full flex items-center justify-center">
+          <svg class="heart-icon" viewBox="0 0 24 24">
+            <path d="M12 6C10.2 3.9 7.2 3.3 4.9 5.2C2.6 7.1 2.3 10.3 4.1 12.6C5.6 14.5 10.1 18.4 11.5 19.7C11.9 20 12.1 20 12.5 19.7C13.9 18.4 18.4 14.5 19.9 12.6C21.6 10.3 21.3 7.1 19 5.2C16.8 3.3 13.8 3.9 12 6Z"
+              stroke="currentColor" stroke-width="1.2" fill="none"/>
+          </svg>
+        </button>
+
+        <img src="${item.thumbnail}" class="w-full h-[220px] object-contain">
+        <p class="font-semibold text-sm">${item.title}</p> 
+        <p class="font-bold text-sm bg-yellow-400 w-[100px] text-center text-black  rounded-md">${item.price.toLocaleString()} so'm</p>
+
+        <div class="flex justify-start items-center gap-2">
+        <button class="border border-black rounded-md p-2 bg-white text-black hover:bg-black hover:text-white hover:border-white transition duration-300 active:scale-95">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="10.07" cy="20.59" r="1.91" />
+          <circle cx="18.66" cy="20.59" r="1.91" />
+          <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10"/>
+          <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91"/>
+        </svg>
       </button>
-    </div>
-  </div>
-  `;
-}
+        <button class="add-to-cart-btn border flex-1  border-red-600 text-red-600 font-medium py-2 rounded-md hover:bg-red-600 hover:text-white transition"
+          data-item='${JSON.stringify(item)}'>
+          Korzinkaga
+        </button>
+        </div>
+      </div>
+    `;
 
-function renderCards(el, list, categoryName) {
-  el.innerHTML = "";
-  list.forEach((item, index) => {
-    el.innerHTML += createCard(item, index, categoryName);
+    wrapper.appendChild(card);
   });
-  initHearts(el);
+
+  initHearts(wrapper);
 }
 
-function renderBanner(el, img) {
-  el.innerHTML = `<div class="flex justify-center items-center py-[80px]">
-    <img src="${img}" class="rounded-[30px] w-full transition-transform duration-500 ease-out hover:scale-[1.05]" alt="">
-  </div>`;
-}
+function initHearts(container) {
+  const hearts = container.querySelectorAll(".heart-btn");
 
+  hearts.forEach(btn => {
+    const card = btn.closest(".card");
+    const id = card.dataset.id;
+    const key = `fav-${id}`;
 
-function initHearts(container = document) {
-  const heartBtns = container.querySelectorAll(".heart-btn");
-  heartBtns.forEach(btn => {
-    const index = btn.dataset.index;
-    if (localStorage.getItem(`heartActive-${index}`) === 'true') btn.classList.add('active');
-    btn.addEventListener("click", () => {
-      btn.classList.toggle('active');
-      localStorage.setItem(`heartActive-${index}`, btn.classList.contains('active'));
-      console.log(` yurak ${index} ${btn.classList.contains('active') ? "like bosildi" : "bosilgan lik ochirildi"}`);
-    });
+    if (localStorage.getItem(key)) btn.classList.add("active");
+
+    btn.onclick = () => {
+      btn.classList.toggle("active");
+      if (btn.classList.contains("active")) {
+        localStorage.setItem(key, card.outerHTML);
+      } else {
+        localStorage.removeItem(key);
+      }
+    };
   });
 }
 
-function getCart() { return JSON.parse(localStorage.getItem("cart")) || []; }
-function saveCart(cart) { localStorage.setItem("cart", JSON.stringify(cart)); }
+function getCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
+function saveCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
 
-document.addEventListener("click", (e) => {
+document.addEventListener("click", e => {
   const btn = e.target.closest(".add-to-cart-btn");
   if (!btn) return;
 
-  let item;
-  try {
-    item = JSON.parse(decodeURIComponent(btn.dataset.item));
-  } catch (err) {
-    console.error(" JSON parse error:", err);
-    return;
-  }
+  const item = JSON.parse(btn.dataset.item);
+  const cart = getCart();
+  const found = cart.find(p => p.id === item.id);
 
-  let cart = getCart();
-  const exists = cart.find(p => p.id === item.id);
-  if (!exists) cart.push({ ...item, qty: 1 });
-  else exists.qty += 1;
+  found ? found.qty++ : cart.push({ ...item, qty: 1 });
   saveCart(cart);
-  console.log("korzika tugmasi bosildi:", cart);
-
-  openModal(item);
 });
 
-function openModal(item) {
-  modalImg.src = item.thumbnail;
-  modalTitle.textContent = item.title;
-  modalPrice.textContent = item.price.toLocaleString() + " so'm";
-  modal.classList.remove("hidden");
-  modal.classList.add("flex");
+function renderBanner(el, img) {
+  el.innerHTML = `
+    <div class="flex justify-center py-10">
+      <img src="${img}" class="rounded-3xl w-full">
+    </div>
+  `;
 }
-closeModal.addEventListener("click", () => {
-  modal.classList.add("hidden"); modal.classList.remove("flex");
-});
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) { modal.classList.add("hidden"); modal.classList.remove("flex"); }
-});
-
-function openSuccessModal() {
-  successModal.classList.remove("hidden");
-  successModal.classList.add("flex");
-  successTimer = setTimeout(() => { triggerSystemError(); }, 600);
-}
-function closeSuccess() {
-  successModal.classList.add("hidden");
-  successModal.classList.remove("flex");
-  if (successTimer) { clearTimeout(successTimer); successTimer = null; }
-}
-closeSuccessModal.addEventListener("click", closeSuccess);
-successModal.addEventListener("click", (e) => {
-  if (e.target === successModal) closeSuccess();
-});
-
-function triggerSystemError() {
-  successModal.classList.add("hidden");
-  modal.classList.add("hidden");
-  systemErrorModal.classList.remove("hidden");
-  systemErrorModal.classList.add("flex");
-  document.body.classList.add("animate-pulse");
-}
-
-console.log("kard keldi:", getCart());
-
 async function initPage() {
-  const phones = await fetchCategory("smartphones", 10);
-  renderCards(phonesEl, phones, "smartphones");
+  renderCards(phonesEl, await fetchCategory("smartphones", 10));
   renderBanner(reklama1, "https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-16/DvAmWwCXU8V2EDK0d3bFFo7YbIpfPT8euXbpAkSWU6PxaThfpP4GeGHfrLJN.jpg");
 
-  const laptops = await fetchCategory("laptops");
-  renderCards(laptopsEl, laptops, "laptops");
+  renderCards(laptopsEl, await fetchCategory("laptops"));
   renderBanner(reklama2, "https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-30/jRvSQq2QhdUCU8XjqZeMuymAFBTeCrWq5xqCqtZLCAYDA1yd4WHW5XPfFcAH.jpg");
 
-  const groceries = await fetchCategory("groceries", 2);
-  renderCards(groceriesEl, groceries, "groceries");
+  renderCards(groceriesEl, await fetchCategory("groceries", 2));
   renderBanner(reklama3, "https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-16/lxBGken4j14iTEsqGjvmwobnIQDy1JMz1RQK5H3yqsGkBFpatl5J5QgPdarc.jpg");
 
-  const beautyProducts = await fetchCategory("groceries", 10);
-  renderCards(beautyEl, beautyProducts, "beauty");
-  renderBanner(reklama4, "https://olcha.uz/image/1440x302/homePage/cdn_1/2025-07-16/rNO2PjAlBe014UcE8TjOCPnvglnKhXZLeu4pC1hpl8qNTAO5xVNaaCm9Qq4n.jpg");
-
-  const furnitureProducts = await fetchCategory("groceries", 7);
-  renderCards(furnitureEl, furnitureProducts, "furniture");
+  renderCards(beautyEl, await fetchCategory("beauty", 10));
+  renderCards(furnitureEl, await fetchCategory("furniture", 7));
 }
+initPage();
 
 const style = document.createElement("style");
 style.innerHTML = `
-.heart-btn.active .heart-icon path{
-  fill:red !important;
-  stroke:red !important;
-}`;
+  .heart-btn.active .heart-icon path {
+    fill: red;
+    stroke: red;
+  }
+`;
 document.head.appendChild(style);
+  new Swiper(".simpleSwiper", {
+    slidesPerView: 1,
+    loop: true,
+    speed: 1500,
+    autoplay: {
+      delay: 60000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+    const counters = document.querySelectorAll('[data-count]');
 
-initPage();
+  counters.forEach(counter => {
+    let target = parseInt(counter.getAttribute('data-count'));
+    let current = target;
+    
+    const interval = setInterval(() => {
+      current--; 
+      if (current < 0) { 
+        clearInterval(interval);
+        current = 0;
+      }
+      counter.textContent = current; 
+    }, 1000); 
+  });
+async function fetchCategories() {
+  try {
+    const res = await fetch("https://dummyjson.com/products/categories");
+    return await res.json();
+  } catch (e) {
+    console.error("Category fetch error:", e);
+    return [];
+  }
+}
+
+async function renderCategorySwiper() {
+  const categories = await fetchCategories();
+  const wrapper = document.getElementById("categoryWrapper");
+
+  wrapper.innerHTML = "";
+
+  categories.forEach(category => {
+    const slide = document.createElement("div");
+    slide.className = "swiper-slide w-auto text-center";
+
+    slide.innerHTML = `
+      <div class="w-24 h-24 rounded-full border-4 border-red-600 flex items-center justify-center mx-auto bg-white">
+        <span class="text-xs font-semibold text-center px-2">
+          ${category}
+        </span>
+      </div>
+      <p class="mt-2 text-sm font-medium capitalize">${category}</p>
+    `;
+
+    wrapper.appendChild(slide);
+  });
+
+  new Swiper(".categorySwiper", {
+    slidesPerView: "auto",
+    spaceBetween: 24,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+}
+
+document.addEventListener("DOMContentLoaded", renderCategorySwiper);
