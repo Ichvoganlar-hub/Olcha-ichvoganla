@@ -196,7 +196,7 @@ async function renderCategorySwiper() {
 
   categories.forEach(category => {
     const slide = document.createElement("div");
-    slide.className = "swiper-slide w-auto text-center";
+    slide.className = "swiper-slide  text-center";
 
     slide.innerHTML = `
       <div class="w-24 h-24 rounded-full border-4 border-red-600 flex items-center justify-center mx-auto bg-white">
@@ -204,14 +204,14 @@ async function renderCategorySwiper() {
           ${category}
         </span>
       </div>
-      <p class="mt-2 text-sm font-medium capitalize">${category}</p>
+      <p class="mt-2 text-sm font-medium ">${category}</p>
     `;
 
     wrapper.appendChild(slide);
   });
 
   new Swiper(".categorySwiper", {
-    slidesPerView: "auto",
+    slidesPerView: "10",
     spaceBetween: 24,
     navigation: {
       nextEl: ".swiper-button-next",
