@@ -16,31 +16,33 @@ function createSnowflake() {
 }
 
 // qor tezligi
-setInterval(createSnowflake, 200)
 
-const phonesEl = document.getElementById('phones')
-const reklama1 = document.getElementById('reklama1')
-const laptopsEl = document.getElementById('laptops')
-const reklama2 = document.getElementById('reklama2')
-const groceriesEl = document.getElementById('groceries')
-const beautyEl = document.getElementById('beauty')
-const reklama3 = document.getElementById('reklama3')
-const furnitureEl = document.getElementById('furniture')
-const reklama4 = document.getElementById('reklama4')
 
-const modal = document.getElementById('productModal')
-const modalImg = document.getElementById('modalImg')
-const modalTitle = document.getElementById('modalTitle')
-const modalPrice = document.getElementById('modalPrice')
-const closeModal = document.getElementById('closeModal')
+setInterval(createSnowflake, 200);
 
-const successModal = document.getElementById('successModal')
-const closeSuccessModal = document.getElementById('closeSuccessModal')
+const phonesEl = document.getElementById("phones");
+const reklama1 = document.getElementById("reklama1");
+const laptopsEl = document.getElementById("laptops");
+const reklama2 = document.getElementById("reklama2");
+const groceriesEl = document.getElementById("groceries");
+const beautyEl = document.getElementById("beauty");
+const reklama3 = document.getElementById("reklama3");
+const furnitureEl = document.getElementById("furniture");
+const reklama4 = document.getElementById("reklama4");
 
-const systemErrorModal = document.getElementById('systemErrorModal')
+const modal = document.getElementById("productModal");
+const modalImg = document.getElementById("modalImg");
+const modalTitle = document.getElementById("modalTitle");
+const modalPrice = document.getElementById("modalPrice");
+const closeModal = document.getElementById("closeModal");
 
-let successTimer = null
-let allProducts = []
+const successModal = document.getElementById("successModal");
+const closeSuccessModal = document.getElementById("closeSuccessModal");
+
+const systemErrorModal = document.getElementById("systemErrorModal");
+
+let successTimer = null;
+
 async function fetchCategory(category, limit = null) {
   const res = await fetch(`https://dummyjson.com/products/category/${category}`)
   const data = await res.json()
@@ -79,6 +81,8 @@ function createCard(item, index, categoryName) {
   </div>
   `
 }
+
+
 
 function renderCards(el, list, categoryName) {
   el.innerHTML = ''
